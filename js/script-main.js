@@ -39,4 +39,4 @@ function showList(str) {
     }
   };
   xmlHttp.send(null);
-} //end function showHint(str)
+}
