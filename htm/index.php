@@ -82,12 +82,12 @@ function showDivs(n) {
 					</p>
 				    <hr style="margin: 0; padding-bottom: 5px;" />
 				    <div class="funding-goal">
-                            <p id="target">เป้าหมาย</p>
-                            <span class="value ">200 คน
-                            	<span class="hide-text">ดำเนินโครงการแล้ว</span>
-                            	73%
-                            </span>
-                        </div>
+                        <p id="target">เป้าหมาย</p>
+                        <span class="value ">200 คน
+                        	<span class="hide-text">ดำเนินโครงการแล้ว</span>
+                            73%
+                        </span>
+                    </div>
 
 				    <div id="myProgress">
 					  <div id="myBar" style="width: 73%"></div>
