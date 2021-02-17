@@ -13,5 +13,6 @@
 	while($row = $rs->fetch_assoc()) {
 		echo $row['type'];
 	 // echo out the contents of each row into a table
+	}
 	$conn->close(); // close database connection
 ?>
