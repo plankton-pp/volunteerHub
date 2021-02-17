@@ -97,7 +97,135 @@ function showDivs(n) {
 				  </div>
 				</div>
 			</td>
+			<td style="padding-left: 15px;">
+				<div class="card">
+				  <img alt="Avatar"src="../img/img_avatar2.jpg" alt="Avatar" style="width:100%">
+				  <div class="card-body">
+				    <a href="" id="card-title"><b>Title</b></a>
+				    <p class="card-text">
+				    	description
+					</p>
+				    <hr style="margin: 0; padding-bottom: 5px;" />
+				    <div class="funding-goal">
+                            <p id="target">เป้าหมาย</p>
+                            <span class="value ">200 คน
+                            	<span class="hide-text">ดำเนินโครงการแล้ว</span>
+                            	14%
+                            </span>
+                        </div>
+
+				    <div id="myProgress">
+					  <div id="myBar" style="width: 14%"></div>
+					</div>
+					<p id="target">0 วัน <span class="hide-text">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span> 0 คน</p>
+				    <a href="#" class="btn btn-primary" id="btn-join">Join</a>
+				  </div>
+				</div>
+			</td>
+			<td style="padding-left: 15px;">
+				<div class="card">
+				  <img alt="Avatar"src="../img/img_avatar2.jpg" alt="Avatar" style="width:100%">
+				  <div class="card-body">
+				    <a href="" id="card-title"><b>Title</b></a>
+				    <p class="card-text">
+				    	description
+					</p>
+				    <hr style="margin: 0; padding-bottom: 5px;" />
+				    <div class="funding-goal">
+                            <p id="target">เป้าหมาย</p>
+                            <span class="value ">200 คน
+                            	<span class="hide-text">ดำเนินโครงการแล้ว</span>
+                            	35%
+                            </span>
+                        </div>
+
+				    <div id="myProgress">
+					  <div id="myBar" style="width: 35%"></div>
+					</div>
+					<p id="target">0 วัน <span class="hide-text">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span> 0 คน</p>
+				    <a href="#" class="btn btn-primary" id="btn-join">Join</a>
+				  </div>
+				</div>
+			</td>
 		</tr>
+		<tr>
+			<td style="padding-left: 15px;">
+				<div class="card">
+				  <img alt="Avatar"src="../img/img_avatar2.jpg" alt="Avatar" style="width:100%">
+				  <div class="card-body">
+				    <a href="" id="card-title"><b>Title</b></a>
+				    <p class="card-text">
+				    	description
+					</p>
+				    <hr style="margin: 0; padding-bottom: 5px;" />
+				    <div class="funding-goal">
+                            <p id="target">เป้าหมาย</p>
+                            <span class="value ">200 คน
+                            	<span class="hide-text">ดำเนินโครงการแล้ว</span>
+                            	73%
+                            </span>
+                        </div>
+
+				    <div id="myProgress">
+					  <div id="myBar" style="width: 73%"></div>
+					</div>
+					<p id="target">0 วัน <span class="hide-text">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span> 0 คน</p>
+				    <a href="#" class="btn btn-primary" id="btn-join">Join</a>
+				  </div>
+				</div>
+			</td>
+			<td style="padding-left: 15px;">
+				<div class="card">
+				  <img alt="Avatar"src="../img/img_avatar2.jpg" alt="Avatar" style="width:100%">
+				  <div class="card-body">
+				    <a href="" id="card-title"><b>Title</b></a>
+				    <p class="card-text">
+				    	description
+					</p>
+				    <hr style="margin: 0; padding-bottom: 5px;" />
+				    <div class="funding-goal">
+                            <p id="target">เป้าหมาย</p>
+                            <span class="value ">200 คน
+                            	<span class="hide-text">ดำเนินโครงการแล้ว</span>
+                            	14%
+                            </span>
+                        </div>
+
+				    <div id="myProgress">
+					  <div id="myBar" style="width: 14%"></div>
+					</div>
+					<p id="target">0 วัน <span class="hide-text">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span> 0 คน</p>
+				    <a href="#" class="btn btn-primary" id="btn-join">Join</a>
+				  </div>
+				</div>
+			</td>
+			<td style="padding-left: 15px;">
+				<div class="card">
+				  <img alt="Avatar"src="../img/img_avatar2.jpg" alt="Avatar" style="width:100%">
+				  <div class="card-body">
+				    <a href="" id="card-title"><b>Title</b></a>
+				    <p class="card-text">
+				    	description
+					</p>
+				    <hr style="margin: 0; padding-bottom: 5px;" />
+				    <div class="funding-goal">
+                            <p id="target">เป้าหมาย</p>
+                            <span class="value ">200 คน
+                            	<span class="hide-text">ดำเนินโครงการแล้ว</span>
+                            	35%
+                            </span>
+                        </div>
+
+				    <div id="myProgress">
+					  <div id="myBar" style="width: 35%"></div>
+					</div>
+					<p id="target">0 วัน <span class="hide-text">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span> 0 คน</p>
+				    <a href="#" class="btn btn-primary" id="btn-join">Join</a>
+				  </div>
+				</div>
+			</td>
+		</tr>
+
 	</table>
 </div>
 </body>
