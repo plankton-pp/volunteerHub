@@ -4,71 +4,59 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" type="text/css" href="../css/style-main.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css">
 	<script type="text/javascript" src="../js/script-main.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
 </head>
 <body>
 <style>
-	.mySlides {
-		display:none
-	}
-	.w3-left, .w3-right, .w3-badge {
-		cursor:pointer
-	}
-	.w3-badge {
-		height:13px;width:13px;padding:0
-	}
 	.hide-text {
     	visibility: hidden;
 	}
+
+/* external css: flickity.css */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+.gallery {
+  background: #EEE;
+}
+
+.gallery-cell {
+  width: 66%;
+  height: 300px;
+  margin-right: 30px;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 0px;
+  color: white;
+}
 </style>
-<div class="w3-content w3-display-container" style="max-width:800px">
-  <img class="mySlides" alt="Banner"src="../img/banner1.jpg" style="width:100%">
-  <img class="mySlides" alt="Banner"src="../img/banner2.jpg" style="width:100%">
-  <img class="mySlides" alt="Banner"src="../img/banner3.jpg" style="width:100%">
-  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)" style="font-size: 50px;">&#10094;</div>
-    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)" style="font-size: 50px;">&#10095;</div>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-  </div>
-  <hr/>
+<!-- Flickity HTML init -->
+<div class="gallery js-flickity"
+  data-flickity-options='{ "wrapAround": true }'>
+  <div class="gallery-cell" style="background: url('../img/banner_1.png')"></div>
+  <div class="gallery-cell" style="background: url('../img/banner_2.png')"></div>
+  <div class="gallery-cell" style="background: url('../img/banner_3.png')"></div>
 </div>
 <div>
   <h3>หมวดหมู่กิจกรรม</h3>
   <button onclick="showList('')" class="btn-primary">Search</button> 
   <button onclick="showList('ชุมชนและสิ่งแวดล้อม')">Search Type</button>
 </div>
-<script>
-	var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
-}
-</script>
 <div align="center" style="margin-top: 30px; margin-bottom: 30px;">
 	<table id="table-card">
 		<?php
@@ -103,7 +91,7 @@ function showDivs(n) {
 				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_target'],$row['attendants'])."%\"></div>";
 				echo			"</div>";
 				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">ในขั้นกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
-				echo		    "<button class=\"btn btn-primary\" id=\"btn-join\" onclick="">JoinN</button>";
+				echo		    "<button class=\"btn btn-primary\" id=\"btn-join\">JoinN</button>";
 				echo		  "</div>";
 				echo		"</div>";
 				echo	"</td>";
