@@ -100,14 +100,14 @@ function showDivs(n) {
 				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_targer'],$row['attendants'])."%\"></div>";
 				echo			"</div>";
 				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
-				echo		    "<a href="" class=\"btn btn-primary\" id=\"btn-join\">Join</a>";
+				echo		    "<a href=\"detail.php\" class=\"btn btn-primary\" id=\"btn-join\">Join</a>";
 				echo		  "</div>";
 				echo		"</div>";
 				echo	"</td>";
 				echo	"</tr>";
 			}
 			function percentage($target,$attendants){
-				var $perc = $target/100;
+				$perc = $target/100;
 				return (int)$attendants/$perc;
 			}
 			function duedate($due_date){
