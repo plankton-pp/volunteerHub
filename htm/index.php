@@ -77,10 +77,12 @@ function showDivs(n) {
 			$conn->query("SET NAMES UTF8");
 			$sql="SELECT * FROM volunteer";
 			$rs=$conn->query($sql);
+			$mod=1;
 			while($row = $rs->fetch_assoc()) {
-				echo "<tr>";
-				for($i=0;$i<3;$i++){
-					echo	"<td style=\"padding-left: 15px;\">";
+				if($mod%3==1){
+					echo "<tr>";
+				}
+				echo	"<td style=\"padding-left: 15px;\">";
 				echo		"<div class=\"card\">";
 				echo		  "<img alt=\"Avatar\"src=\"../img/".$row['img_banner']."\" style=\"width:100%\">";
 				echo		  "<div class=\"card-body\">";
@@ -105,8 +107,10 @@ function showDivs(n) {
 				echo		  "</div>";
 				echo		"</div>";
 				echo	"</td>";
+				if($mod%3==0){
+					echo	"</tr>";
 				}
-				echo	"</tr>";
+				$mod++;
 			}
 			function percentage($target,$attendants){
 				$perc = $target/100;
