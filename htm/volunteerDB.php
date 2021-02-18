@@ -10,6 +10,7 @@
 		 $sql="SELECT * FROM volunteer";
 	}
 	$rs=$conn->query($sql);
+	$mod=1;
 	while($row = $rs->fetch_assoc()) {
 		if($mod%3==1){
 					echo "<tr>";
@@ -45,5 +46,19 @@
 				$mod++;
 	 // echo out the contents of each row into a table
 	}
+	function percentage($target,$attendants){
+				$perc = $target/100;
+				return (int)$attendants/$perc;
+			}
+			function duedate($due_date){
+				$datetime = new DateTime($due_date);
+				$datedue = $datetime->format('Y-m-d');
+				$datenow = date('Y-m-d');
+
+				$date1=date_create($datedue);
+				$date2=date_create($datenow);
+				$diff=date_diff($date1,$date2);
+				return $diff->format("เหลือ %a");
+			}
 	$conn->close(); // close database connection
 ?>
