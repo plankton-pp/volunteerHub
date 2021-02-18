@@ -102,7 +102,7 @@ function showDivs(n) {
 				echo		    "<div id=\"myProgress\">";
 				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_target'],$row['attendants'])."%\"></div>";
 				echo			"</div>";
-				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
+				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">ในขั้นกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
 				echo		    "<a href=\"detail.php\" class=\"btn btn-primary\" id=\"btn-join\">Join</a>";
 				echo		  "</div>";
 				echo		"</div>";
@@ -117,15 +117,14 @@ function showDivs(n) {
 				return (int)$attendants/$perc;
 			}
 			function duedate($due_date){
-				/*$datetime = new DateTime($due_date);
-				$date1 = $datetime->format('Y-m-d');
-				$date2 = date('Y-m-d');
+				$datetime = new DateTime($due_date);
+				$datedue = $datetime->format('Y-m-d');
+				$datenow = date('Y-m-d');
 
-
+				$date1=date_create($datedue);
+				$date2=date_create($datenow);
 				$diff=date_diff($date1,$date2);
-				$diff->format("%R%a days");
-				*/
-				return 13;
+				return $diff->format("เหลือ %a");
 			}
 		?>
 	</table>

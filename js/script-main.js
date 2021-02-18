@@ -35,7 +35,8 @@ function showList(str) {
     var result = "";
     if (xmlHttp.readyState == 4) {
       var str = xmlHttp.responseText;
-      alert(str);
+      //document.getElementById("table-card").innerHTML = str;
+      alert("Hello World");
     }
   };
   xmlHttp.send(null);
