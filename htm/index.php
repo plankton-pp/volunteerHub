@@ -81,7 +81,7 @@ function showDivs(n) {
 				echo "<tr>";
 				echo	"<td style=\"padding-left: 15px;\">";
 				echo		"<div class=\"card\">";
-				echo		  "<img alt=\"Avatar\"src=\"../img/Avatar.jpg\" style=\"width:100%\">";
+				echo		  "<img alt=\"Avatar\"src=\"../img/".$row['img_banner']."\" style=\"width:100%\">";
 				echo		  "<div class=\"card-body\">";
 				echo		    "<a href=\"detail.php\" id=\"card-title\"><b>".$row['title']."</b></a>";
 				echo		    "<p class=\"card-text\">";
@@ -119,7 +119,7 @@ function showDivs(n) {
 				$diff=date_diff($date1,$date2);
 				$diff->format("%R%a days");
 				*/
-				return $due_date->format('Y-m-d');
+				return 13;
 			}
 		?>
 	</table>
