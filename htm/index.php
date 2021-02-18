@@ -78,33 +78,33 @@ function showDivs(n) {
 			$sql="SELECT * FROM volunteer";
 			$rs=$conn->query($sql);
 			while($row = $rs->fetch_assoc()) {
-				echo "<tr>
-						<td style=\"padding-left: 15px;\">
-							<div class=\"card\">
-							  <img alt=\"Avatar\"src=\"../img/Avatar.jpg\" style=\"width:100%\">
-							  <div class=\"card-body\">
-							    <a href=\"\" id=\"card-title\"><b>".$row['title'];."</b></a>
-							    <p class=\"card-text\">
-							    	".$row['description'];."
-								</p>
-							    <hr style=\"margin: 0; padding-bottom: 5px;\" />
-							    <div class=\"funding-goal\">
-			                        <p id=\"target\">เป้าหมาย</p>
-			                        <span class=\"value \">".$row['attendants_target'];." คน
-			                        	<span class=\"hide-text\">ดำเนินโครงการแล้ว</span>
-			                            ".percentage($row['attendants_targer'],$row['attendants']);."%
-			                        </span>
-			                    </div>
+				echo "<tr>";
+				echo	"<td style=\"padding-left: 15px;\">";
+				echo		"<div class=\"card\">";
+				echo		  "<img alt=\"Avatar\"src=\"../img/Avatar.jpg\" style=\"width:100%\">";
+				echo		  "<div class=\"card-body\">";
+				echo		    "<a href=\"\" id=\"card-title\"><b>".$row['title'];."</b></a>";
+				echo		    "<p class=\"card-text\">";
+				echo		    	.$row['description'];
+				echo			"</p>";
+				echo		    "<hr style=\"margin: 0; padding-bottom: 5px;\" />";
+				echo		    "<div class=\"funding-goal\">";
+			    echo                "<p id=\"target\">เป้าหมาย</p>";
+			    echo                "<span class=\"value \">".$row['attendants_target']." คน";
+			    echo                	"<span class=\"hide-text\">ดำเนินโครงการแล้ว</span>";
+			    echo                    .percentage($row['attendants_targer'],$row['attendants']);."%";
+			    echo                "</span>";
+			    echo            "</div>";
 
-							    <div id=\"myProgress\">
-								  <div id=\"myBar\" style=\"width: ".percentage($row['attendants_targer'],$row['attendants']);."%\"></div>
-								</div>
-								<p id=\"target\">".duedate($row['due_date']);." วัน <span class=\"hide-text\">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span>".$row['attendants'];." คน</p>
-							    <a href="" class=\"btn btn-primary\" id=\"btn-join\">Join</a>
-							  </div>
-							</div>
-						</td>
-					</tr>";
+				echo		    "<div id=\"myProgress\">";
+				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_targer'],$row['attendants'])."%\"></div>";
+				echo			"</div>";
+				echo			"<p id=\"target\">".duedate($row['due_date']);." วัน <span class=\"hide-text\">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span>".$row['attendants'];." คน</p>";
+				echo		    "<a href="" class=\"btn btn-primary\" id=\"btn-join\">Join</a>";
+				echo		  "</div>";
+				echo		"</div>";
+				echo	"</td>";
+				echo	"</tr>";
 			}
 			function percentage($target,$attendants){
 				var $perc = $target/100;
