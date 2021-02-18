@@ -79,7 +79,8 @@ function showDivs(n) {
 			$rs=$conn->query($sql);
 			while($row = $rs->fetch_assoc()) {
 				echo "<tr>";
-				echo	"<td style=\"padding-left: 15px;\">";
+				for($i=0;$i<3;$i++){
+					echo	"<td style=\"padding-left: 15px;\">";
 				echo		"<div class=\"card\">";
 				echo		  "<img alt=\"Avatar\"src=\"../img/".$row['img_banner']."\" style=\"width:100%\">";
 				echo		  "<div class=\"card-body\">";
@@ -104,6 +105,7 @@ function showDivs(n) {
 				echo		  "</div>";
 				echo		"</div>";
 				echo	"</td>";
+				}
 				echo	"</tr>";
 			}
 			function percentage($target,$attendants){
