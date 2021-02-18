@@ -81,11 +81,11 @@ function showDivs(n) {
 				echo "<tr>
 						<td style=\"padding-left: 15px;\">
 							<div class=\"card\">
-							  <img alt=\"Avatar\"src=\"../img/Avatar.jpg"\" style=\"width:100%\">
+							  <img alt=\"Avatar\"src=\"../img/Avatar.jpg\" style=\"width:100%\">
 							  <div class=\"card-body\">
-							    <a href="" id=\"card-title\"><b>".$row['title'];."</b></a>
+							    <a href=\"\" id=\"card-title\"><b>".$row['title'];."</b></a>
 							    <p class=\"card-text\">
-							    	".$row['description']."
+							    	".$row['description'];."
 								</p>
 							    <hr style=\"margin: 0; padding-bottom: 5px;\" />
 							    <div class=\"funding-goal\">
