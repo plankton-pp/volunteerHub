@@ -38,7 +38,7 @@
 </div>
 <div>
   <h3>หมวดหมู่กิจกรรม</h3>
-  <button onclick="showList('')">Search</button> 
+  <button onclick="showList('')" class="btn-primary">Search</button> 
   <button onclick="showList('ชุมชนและสิ่งแวดล้อม')">Search Type</button>
 </div>
 <script>
@@ -103,7 +103,7 @@ function showDivs(n) {
 				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_target'],$row['attendants'])."%\"></div>";
 				echo			"</div>";
 				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">ในขั้นกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
-				echo		    "<a href=\"detail.php\" class=\"btn btn-primary\" id=\"btn-join\">Join</a>";
+				echo		    "<button class=\"btn btn-primary\" id=\"btn-join\" onclick="">JoinN</button>";
 				echo		  "</div>";
 				echo		"</div>";
 				echo	"</td>";
