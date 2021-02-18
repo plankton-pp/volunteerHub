@@ -92,12 +92,12 @@ function showDivs(n) {
 			    echo                "<p id=\"target\">เป้าหมาย</p>";
 			    echo                "<span class=\"value \">".$row['attendants_target']." คน";
 			    echo                	"<span class=\"hide-text\">ดำเนินโครงการแล้ว</span>";
-			    echo                    percentage($row['attendants_targer'],$row['attendants'])."%";
+			    echo                    percentage($row['attendants_target'],$row['attendants'])."%";
 			    echo                "</span>";
 			    echo            "</div>";
 
 				echo		    "<div id=\"myProgress\">";
-				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_targer'],$row['attendants'])."%\"></div>";
+				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_target'],$row['attendants'])."%\"></div>";
 				echo			"</div>";
 				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
 				echo		    "<a href=\"detail.php\" class=\"btn btn-primary\" id=\"btn-join\">Join</a>";
@@ -111,13 +111,15 @@ function showDivs(n) {
 				return (int)$attendants/$perc;
 			}
 			function duedate($due_date){
-				$datetime = new DateTime($due_date);
+				/*$datetime = new DateTime($due_date);
 				$date1 = $datetime->format('Y-m-d');
-				$time = $datetime->format('H:i:s');
 				$date2 = date('Y-m-d');
 
+
 				$diff=date_diff($date1,$date2);
-				return $diff;
+				$diff->format("%R%a days");
+				*/
+				return $due_date->format('Y-m-d');
 			}
 		?>
 	</table>
