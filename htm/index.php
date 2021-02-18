@@ -81,25 +81,25 @@ function showDivs(n) {
 				echo "<tr>
 						<td style=\"padding-left: 15px;\">
 							<div class=\"card\">
-							  <img alt=\"Avatar\"src=\"../img/".<img>."\" style=\"width:100%\">
+							  <img alt=\"Avatar\"src=\"../img/Avatar.jpg"\" style=\"width:100%\">
 							  <div class=\"card-body\">
-							    <a href="" id=\"card-title\"><b>".<title>."</b></a>
+							    <a href="" id=\"card-title\"><b>".$row['title'];."</b></a>
 							    <p class=\"card-text\">
-							    	".<description>."
+							    	".$row['description']."
 								</p>
 							    <hr style=\"margin: 0; padding-bottom: 5px;\" />
 							    <div class=\"funding-goal\">
 			                        <p id=\"target\">เป้าหมาย</p>
-			                        <span class=\"value \">".<target>." คน
+			                        <span class=\"value \">".$row['attendants_target'];." คน
 			                        	<span class=\"hide-text\">ดำเนินโครงการแล้ว</span>
-			                            ".<progress>."%
+			                            ".percentage($row['attendants_targer'],$row['attendants']);."%
 			                        </span>
 			                    </div>
 
 							    <div id=\"myProgress\">
-								  <div id=\"myBar\" style=\"width: ".<progress>."%\"></div>
+								  <div id=\"myBar\" style=\"width: ".percentage($row['attendants_targer'],$row['attendants']);."%\"></div>
 								</div>
-								<p id=\"target\">".<duedate>." วัน <span class=\"hide-text\">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span>".<attendants>." คน</p>
+								<p id=\"target\">".duedate($row['due_date']);." วัน <span class=\"hide-text\">อยู่ในขั้นตอนกำลังดำเนินโครงการแล้ว</span>".$row['attendants'];." คน</p>
 							    <a href="" class=\"btn btn-primary\" id=\"btn-join\">Join</a>
 							  </div>
 							</div>
@@ -107,7 +107,8 @@ function showDivs(n) {
 					</tr>";
 			}
 			function percentage($target,$attendants){
-
+				var $perc = $target/100;
+				return (int)$attendants/$perc;
 			}
 			function duedate($due_date){
 				$datetime = new DateTime($due_date);
