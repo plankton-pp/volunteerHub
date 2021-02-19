@@ -72,7 +72,6 @@ body { font-family: sans-serif; }
 			$sql="SELECT * FROM volunteer";
 			$rs=$conn->query($sql);
 			$mod=1;
-			$round=0;
 			while($row = $rs->fetch_assoc()) {
 				if($mod%3==1){
 					echo "<tr>";
@@ -106,7 +105,6 @@ body { font-family: sans-serif; }
 					echo	"</tr>";
 				}
 				$mod++;
-				$round++;
 			}
 			function percentage($target,$attendants){
 				$perc = $target/100;
