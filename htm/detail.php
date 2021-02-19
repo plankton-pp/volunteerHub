@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>VolunteerHub</title>
 </head>
 <body>
-	<h1>Helloworld</h1>
+	<?php
+	$index = $_GET['index'];
+	
+	?>
 </body>
 </html>

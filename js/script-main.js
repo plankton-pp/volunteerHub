@@ -37,15 +37,6 @@ function showList(str) {
       var str = xmlHttp.responseText;
       document.getElementById("table-card").innerHTML = str;
     }
-  };
+  }
   xmlHttp.send(null);
-
-
-function createSession(){
-    alert("hello");
-}
-
-function toDetail(){
-    var my_var = <?php echo json_encode($my_var); ?>;
-    console.log(my_var);
 }

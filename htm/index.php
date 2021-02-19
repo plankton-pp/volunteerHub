@@ -1,6 +1,12 @@
 <!DOCTYPE html>
+<?php
+// Start the session
+session_start();
+?>
 <html>
 <head>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<title>VolunteerHub</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -50,7 +56,7 @@ body { font-family: sans-serif; }
   data-flickity-options='{ "wrapAround": true }'>
   <div class="gallery-cell" style="background: url('../img/banner_1.png')"></div>
   <div class="gallery-cell" style="background: url('../img/banner_2.png')"></div>
-  <div class="gallery-cell" style="background: url('../img/banner_3.png')"></div>
+  <div class="gallery-cell" style="background: url('../img/banner3.jpg')"></div>
 </div>
 <div>
   <h3>หมวดหมู่กิจกรรม</h3>
@@ -66,6 +72,7 @@ body { font-family: sans-serif; }
 			$sql="SELECT * FROM volunteer";
 			$rs=$conn->query($sql);
 			$mod=1;
+			$round=0;
 			while($row = $rs->fetch_assoc()) {
 				if($mod%3==1){
 					echo "<tr>";
@@ -91,8 +98,7 @@ body { font-family: sans-serif; }
 				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_target'],$row['attendants'])."%\"></div>";
 				echo			"</div>";
 				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">ในขั้นกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
-				echo		    "<button class=\"btn btn-primary\" id=\"btn-join\" onclick=\"createSession()\">session</button>";
-				echo		    "<a href=\"detail.php\" class=\"btn btn-primary\" id=\"btn-join\" onclick=\"toDetail()\">Join</a>";
+				echo 			'<a href="detail.php?index='.$row['title'].'" class="btn btn-primary" id="btn-join">Join</a>';
 				echo		  "</div>";
 				echo		"</div>";
 				echo	"</td>";
@@ -100,6 +106,7 @@ body { font-family: sans-serif; }
 					echo	"</tr>";
 				}
 				$mod++;
+				$round++;
 			}
 			function percentage($target,$attendants){
 				$perc = $target/100;
