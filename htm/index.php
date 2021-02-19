@@ -45,6 +45,13 @@ body { font-family: sans-serif; }
   color: white;
 }
 </style>
+<script>
+	var Session="null";
+	function toDetail(){
+   var my_var = <?php echo json_encode($my_var); ?>;
+   console.log(my_var);
+}
+</script>>
 <!-- Flickity HTML init -->
 <div class="gallery js-flickity"
   data-flickity-options='{ "wrapAround": true }'>
@@ -91,7 +98,7 @@ body { font-family: sans-serif; }
 				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_target'],$row['attendants'])."%\"></div>";
 				echo			"</div>";
 				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">ในขั้นกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
-				echo		    "<button class=\"btn btn-primary\" id=\"btn-join\">JoinN</button>";
+				echo		    "<a href=\"detail.php\" class=\"btn btn-primary\" id=\"btn-join\" onclick=\"toDetail()\">JoinN</a>";
 				echo		  "</div>";
 				echo		"</div>";
 				echo	"</td>";
