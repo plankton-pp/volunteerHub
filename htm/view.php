@@ -8,7 +8,7 @@
 	
 <p><a href="insertForm.htm">Add a new record</a></p>
 <form action="view.php" method="get">
-<input list="name" name="search" onkeyup="searchName(this.value)">
+<input list="namesugg" name="search" onkeyup="searchName(this.value)">
 <datalist id="name">
  <option value="%">
 </datalist>
