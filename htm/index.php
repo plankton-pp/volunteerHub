@@ -63,7 +63,7 @@ body { font-family: sans-serif; }
   <button onclick="showList('')" class="btn-primary">Search</button> 
   <button onclick="showList('ชุมชนและสิ่งแวดล้อม')">Search Type</button>
 </div>
-<div align="center" style="margin-top: 30px; margin-bottom: 30px;">
+<div align="center" style="margin-top: 30px; margin-bottom: 30px;">			
 	<table id="table-card">
 		<?php
 			// connect to the database
