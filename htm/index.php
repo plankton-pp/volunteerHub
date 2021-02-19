@@ -5,7 +5,7 @@ session_start();
 ?>
 <html>
 <head>
-	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="shortcut icon" href="../img/volunteer.ico" />
 	<title>VolunteerHub</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
