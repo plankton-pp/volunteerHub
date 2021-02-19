@@ -1,6 +1,8 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="../img/volunteer.ico" />
+	<title>VolunteerHub</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insertion</title>
 </head>
 <body>

@@ -1,6 +1,8 @@
 <? session_start(); ?>
 <html lang="en">
 <head>
+  <link rel="shortcut icon" href="../img/volunteer.ico" />
+  <title>VolunteerHub</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +29,7 @@
       margin-top: 100px;
     }
     body {
-      background-image: url('img/bg.jpg');
+      background-image: url('../img/bg2.jpg');
       background-size: cover;
       font-family: 'Kanit', sans-serif;
     }

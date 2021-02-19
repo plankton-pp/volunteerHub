@@ -10,7 +10,7 @@ body {
 .head-banner {
     /* top: 0; */
     height: 500px;
-    background-image: url('img/p1.jpg');
+    background-image: url('../img/p1.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

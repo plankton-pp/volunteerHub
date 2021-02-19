@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="shortcut icon" href="../img/volunteer.ico" />
+	<title>VolunteerHub</title>
 	<title>VolunteerHub</title>
 	<link rel="stylesheet" type="text/css" href="../css/style-detail.css">
 </head>
