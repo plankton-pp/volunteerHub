@@ -27,3 +27,4 @@ table detail
 	image
 	datail
 	
+//test edit
