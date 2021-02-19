@@ -18,18 +18,18 @@
 
 
     .login-box {
-      max-width: 35rem;
+      max-width: 100%;
       padding: 20px;
       border-radius: 0px;
       color: #fff;
       background-color: rgba(86, 86, 86, 0.3)
     }
     .wrapper-content {
-	  color: #CCFFFF;
+	    color: #CCFFFF;
       margin-top: 100px;
     }
     body {
-      background-image: url('../img/bg2.jpg');
+      background-image: url('../img/bg3.jpg');
       background-size: cover;
       font-family: 'Kanit', sans-serif;
     }
