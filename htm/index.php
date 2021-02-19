@@ -63,7 +63,7 @@ body { font-family: sans-serif; }
   <button onclick="showList('')" class="btn-primary">Search</button> 
   <button onclick="showList('ชุมชนและสิ่งแวดล้อม')">Search Type</button>
 </div>
-<div align="center" style="margin-top: 30px; margin-bottom: 30px;">
+<div align="center" style="margin-top: 30px; margin-bottom: 30px;">			
 	<table id="table-card">
 		<?php
 			// connect to the database
@@ -72,7 +72,6 @@ body { font-family: sans-serif; }
 			$sql="SELECT * FROM volunteer";
 			$rs=$conn->query($sql);
 			$mod=1;
-			$round=0;
 			while($row = $rs->fetch_assoc()) {
 				if($mod%3==1){
 					echo "<tr>";
@@ -106,7 +105,6 @@ body { font-family: sans-serif; }
 					echo	"</tr>";
 				}
 				$mod++;
-				$round++;
 			}
 			function percentage($target,$attendants){
 				$perc = $target/100;
