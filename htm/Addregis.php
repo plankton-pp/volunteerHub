@@ -10,7 +10,7 @@
 <html>
 <body>	
 <?php
-$con = mysqli_connect("localhost","root","","volunteer");
+$con = mysqli_connect("localhost","root","","volunteerhub");
 if(!$con) {
 	die("Could not connect : " . mysqli_error());
 }

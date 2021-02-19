@@ -28,7 +28,7 @@
       margin-top: 100px;
     }
     body {
-      background-image: url('img/bg.jpg');
+      background-image: url('../img/bg2.jpg');
       background-size: cover;
       font-family: 'Kanit', sans-serif;
     }
@@ -37,7 +37,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="card card-register mx-auto" style="max-width: 30rem; background-color: rgba(86, 86, 86, 0.3);color: #fff; margin-top: 100px;">
+        <div class="card card-register mx-auto" style="max-width: 30rem; background-color: rgba(86, 86, 86, 0.6);color: #fff; margin-top: 100px;">
             <div class="card-body">
                 <form action="addregis.php" method="POST">
                     <div class="row">

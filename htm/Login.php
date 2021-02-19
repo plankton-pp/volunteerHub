@@ -18,18 +18,19 @@
 
 
     .login-box {
-      max-width: 100%;
+      width: 100%;
       padding: 20px;
-      border-radius: 0px;
+      border-radius: 10px;
       color: #fff;
-      background-color: rgba(86, 86, 86, 0.3)
+      background-color: rgba(86, 86, 86, 0.7)
     }
     .wrapper-content {
 	    color: #CCFFFF;
       margin-top: 100px;
+      margin-left: 0px;
     }
     body {
-      background-image: url('../img/bg3.jpg');
+      background-image: url('../img/bg3-2.jpg');
       background-size: cover;
       font-family: 'Kanit', sans-serif;
     }
@@ -40,17 +41,9 @@
   <div class="wrapper-content">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
-          <div class="text-center">
-            <h1 style="color: #fff; font-size: 50px;">Volunteer Hub</h1>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4">
+        <div class="col-lg-5" style="margin-left: -80px;">
           <div class="login-box mx-auto mt-3">
-            <h1 class="text-center">LOG IN</h1>
+            <h1 style="color: #fff; font-size: 50px;">Volunteer Hub</h1>
             <form action="checklogin.php" method="POST">
               <div class="form-group">
                 <label>USERNAME</label>

@@ -2,7 +2,7 @@
 session_start();
         if(isset($_POST['username'])){
 				//connection
-	$con = mysqli_connect("localhost","root","");
+	$con = mysqli_connect("localhost","root","","volunteerhub");
 		if(!$con) {
 			die("Could not connect : " . mysqli_error());
 			}
