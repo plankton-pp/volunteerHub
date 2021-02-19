@@ -1,5 +1,8 @@
 <?php session_start();  ?>
 <HTML>
+<head>
+	<link rel="stylesheet" href="../css/style-insertform.css">
+</head>
 <BODY>
 	<?php 
 	$_SESSION['ID']=$_GET['id'];
