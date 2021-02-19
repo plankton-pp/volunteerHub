@@ -50,7 +50,6 @@ $data = "return alertID($id)";
 // echo out the contents of each row into a table
 echo "<tr>";
 echo '<td>' . $id . '</td>';
-echo '<td>' . $row['id'] . '</td>';
 echo '<td>' . $row['title'] . '</td>';
 echo '<td>' . $row['description'] . '</td>';
 echo '<td>' . $row['attendants_target'] . '</td>';
