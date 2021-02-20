@@ -1,7 +1,4 @@
-<link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
 
-body { 
-  font-family: 'Kanit', sans-serif; }
 
  		input[type=text], select {
   			width: 100%;
@@ -14,7 +11,7 @@ body {
 		}
 
 		input[type=number], select {
-  			width: 100%;
+  			width: 10%;
   			padding: 12px 20px;
   			margin: 8px 0;
   			display: inline-block;
