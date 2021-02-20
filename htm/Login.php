@@ -44,7 +44,7 @@
         <div class="col-lg-5" style="margin-left: -80px;">
           <div class="login-box mx-auto mt-3">
             <h1 style="color: #fff; font-size: 50px;">Volunteer Hub</h1>
-            <form action="checklogin.php" method="POST">
+            <form action="check-login.php" method="POST">
               <div class="form-group">
                 <label>USERNAME</label>
                 <input type="text" class="form-control" placeholder="กรอกชื่อผู้ใช้งาน" name="username" autofocus="autofocus">
