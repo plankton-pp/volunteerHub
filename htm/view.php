@@ -1,72 +1,96 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>View Register Database</title>
-<script src="showName.js"></script>
-</head>
-<body>
-	
-<p><a href="insertForm.htm">Add a new record</a></p>
-<form action="view.php" method="get">
-<input list="namesugg" name="search" onkeyup="searchName(this.value)">
-<datalist id="name">
- <option value="%">
-</datalist>
-<input type="submit" value="search">
-</form>
-<?php
-// connect to the database
-$conn=mysqli_connect("localhost", "root", "","volunteerhub");
-$conn->query("SET NAMES UTF8");
-// get results from database
-if (isset($_GET["search"])) {
- $title = $_GET["search"];
- $sql="SELECT * FROM volunteer WHERE title LIKE '$title'";
-} else {
- $sql="SELECT * FROM volunteer";
-}
-$rs=$conn->query($sql);
-// Print Header of Table
-echo "<table border='1' cellpadding='10' width=80% >";
-echo "<tr>
-<th>ID</th>
-<th>Title</th>
-<th>Description</th>
-<th>Attendants Target</th>
-<th>Attendants</th>
-<th>Due Date</th>
-<th>Detail</th>
-<th>Expense</th>
-<th>Advantage</th>
-<th>Type</th>
-<th>Image Banner</th>
-<th>Image</th>
- </tr>";
- // loop through results of database query, displaying them in the table
-while($row = $rs->fetch_assoc()) {
-$id = $row['id'];
-$data = "return alertID($id)";
+<!DOCTYPE html>
+<html lang="en">
+  <head>
 
-// echo out the contents of each row into a table
-echo "<tr>";
-echo '<td>' . $id . '</td>';
-echo '<td>' . $row['title'] . '</td>';
-echo '<td>' . $row['description'] . '</td>';
-echo '<td>' . $row['attendants_target'] . '</td>';
-echo '<td>' . $row['attendants'] . '</td>';
-echo '<td>' . $row['due_date'] . '</td>';
-echo '<td>' . $row['detail'] . '</td>';
-echo '<td>' . $row['expenses'] . '</td>';
-echo '<td>' . $row['advantage'] . '</td>';
-echo '<td>' . $row['type'] . '</td>';
-echo '<td>' . '<img src="'.$row['img_banner'].'" width = "25">'. '</td>';
-echo '<td>' . '<img src="'.$row['img'].'" width = "25">'. '</td>';
-echo '<td><a href="editForm.php?id='.$id.'">Edit</a> ';
-echo '<a href="delete.php?id='.$id.'">Delete</a></td>';
-echo "</tr>";
-}
-echo "</table>"; // close table>
-$conn->close();
-?>
-</body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="lib/sidebar.less">
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" crossorigin="anonymous">
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css">
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+
+
+    <title>Admin</title>
+  </head>
+  <body>
+
+  	<div id="toolbar">
+  		<button id="remove" class="btn btn-danger" disabled>
+    		<i class="fa fa-trash"></i> Delete
+  		</button>
+		</div>
+
+  	 <table class="table-border" width="1300" align="center" border="0"
+		  id="table"
+		  data-toggle="table"
+		  data-search="true"
+		  data-pagination="true"
+		  data-page-list="[10, 25, 50, 100, all]"
+		  data-click-to-select="true"
+		  data-url="viewjson.php">
+	  <thead>
+	    <tr>
+	      <th data-field="id">ID</th>
+	      <th data-field="title">ชื่อกิจกรมม</th>
+	      <th data-field="description">คำอธิบาย</th>
+	      <th data-field="attendants_target">จำนวนคนที่ต้องการ</th>
+	      <th data-field="attendants">จำนวนคนที่เข้าร่วม</th>
+	      <th data-field="due_date">วันที่จัดกิจกรรม</th>
+	      <th data-field="expenses">ค่าใช้จ่าย</th>
+	      <th data-field="advantage">ประโยชน์ที่ได้รับ</th>
+	      <th data-field="type">ประเภทกิจกรรม</th>
+	      <th data-field="img_banner">ภาพปก</th>
+	      <th data-field="img">ภาพอื่น ๆ</th>
+	    </tr>
+	  </thead>
+	</table>
+
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/key-events/bootstrap-table-key-events.min.js"></script>
+     <!-------------------------------------------------------------------------------------------------------------------------------------->
+
+
+    <script type="text/javascript">
+
+    	var $table = $("#table");
+
+    	function operateFormatter(value, row, index) {
+          return [ 
+
+            ].join('')
+       }
+
+       window.operateEvents = {
+       		'click .edit': function (e, value, row, index) {
+        	},
+
+            'click .remove': function (e, value, row, index) {
+        	}
+    	}
+    </script>
+  </body>
 </html>
