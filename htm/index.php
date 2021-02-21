@@ -21,7 +21,7 @@ session_start();
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	  <div class="container-fluid">
 	    <a class="navbar-brand" href="#">VolunteerHub</a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,13 @@ session_start();
 	          <a class="nav-link"  href="downloaddoc.php?nama=doc.pdf" >Dowload</a>
 	        </li>
 	      </ul>
-	      
+	      <div class="d-flex">
+	      	<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	      		<div class="nav-link" ><li class="nav-item" ><a href="profile.php"><button id="profile">Profile</button></a></li></div>
+	      		<div class="nav-link" ><li class="nav-item" id="logoutbutton"><a href="logout.php" style="color: white;" class="btn btn-danger">Logout</a></li></div>
+
+	      	</ul>
+	      </div>
 	    </div>
 	  </div>
 	</nav>
@@ -93,6 +99,18 @@ body { font-family: sans-serif; }
   font-size: 0px;
   color: white;
 }
+#profile{
+		width: 150px;
+		height: 36px;
+		border-radius: 50px;
+		color: white;
+		background-color:#555555 ;
+		border:0px;
+		opacity: 0.8;
+	}
+#profile:hover {
+	  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+	}
 </style>
 <script type="text/javascript">
 		function say(str){
@@ -117,34 +135,16 @@ function logout(){
 <!-- Flickity HTML init -->
 <div class="gallery js-flickity"
   data-flickity-options='{ "wrapAround": true }'>
-  <div class="gallery-cell" style="background: url('../img/banner_1.png')"></div>
-  <div class="gallery-cell" style="background: url('../img/banner_2.png')"></div>
-  <div class="gallery-cell" style="background: url('../img/banner3.jpg')"></div>
+  <div class="gallery-cell" style="background: url('../img/banner3_1_1.jpg')"></div>
+  <div class="gallery-cell" style="background: url('../img/banner3_2_1.jpg')"></div>
+  <div class="gallery-cell" style="background: url('../img/banner3_3_1.jpg')"></div>
 </div>
-<div>
+<br><br>
+<div align="center">
   <h3>หมวดหมู่กิจกรรม</h3>
   <button onclick="showList('')" class="btn-primary">Search</button> 
   <button onclick="showList('ชุมชนและสิ่งแวดล้อม')">Search Type</button>
-  <a href="login.php" class="btn btn-primary">Login</a>
   
-<!-- Split button -->
-<div class="btn-group btn-group-left">
-    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span>
- <span class="sr-only"><div id="profilename"></div></span>
-    </button>
-    <ul class="dropdown-menu">
-        <li><a href="#">Action</a>
-        </li>
-        <li><a href="#">Another action</a>
-        </li>
-        <li><a href="#">Something else here</a>
-        </li>
-        <li role="separator" class="divider"></li>
-        <li><a href="#">Separated link</a>
-        </li>
-    </ul>
-</div>
-
 <div align="center" style="margin-top: 30px; margin-bottom: 30px;">			
 	<table id="table-card">
 		<?php
@@ -160,7 +160,7 @@ function logout(){
 				}
 				echo	"<td style=\"padding-left: 15px;\">";
 				echo		"<div class=\"card\">";
-				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../img/'.$row['img_banner'].'" style="width:100%"/></a>';
+				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../htm/upload/img_cover/'.$row['img_banner'].'" style="width:100%"/></a>';
 				echo		  "<div class=\"card-body\">";
 				echo		   '<a href="detail.php?index='.$row['title'].'" id="card-title"><b>'.$row['title'].'</b></a>';
 				echo		    "<p class=\"card-text\">";
@@ -181,7 +181,7 @@ function logout(){
 				echo '<div id="buttonset'.$row["id"].'">';
 				echo "<script type=\"text/javascript\">
 		            	if(sessionStorage.getItem('loggedin')==null){
-		            		document.getElementById(\"logoutbutton\").innerHTML = \"<p hidden>This paragraph should be hidden.</p>\";
+		            		document.getElementById(\"logoutbutton\").innerHTML = \"<a href='login.php' class='btn btn-primary'>Login</a>\";
 		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<button class='btn btn-primary'id='btn-join' onclick='say()'>Join</button>\";
 		            	}else if(sessionStorage.getItem('loggedin')=='true'){
 		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<a href='detail.php?index=".$row['title']."' class='btn btn-primary'id='btn-join'>Join</a>\";
