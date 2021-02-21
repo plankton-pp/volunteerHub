@@ -52,24 +52,7 @@ session_start();
 	          <a class="nav-link"  href="downloaddoc.php?nama=doc.pdf" >Dowload</a>
 	        </li>
 	      </ul>
-	      <!-- Split button -->
-			<div class="btn-group btn-group-left">
-			    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span>
-			 <span class="sr-only"><div id="profilename">Profile</div></span>
-			    </button>
-			    <ul class="dropdown-menu">
-			        <li><a href="#">Action</a>
-			        </li>
-			        <li><a href="#">Another action</a>
-			        </li>
-			        <li><a href="#">Something else here</a>
-			        </li>
-			        <li role="separator" class="divider"></li>
-			        <li>
-			        	<div id="logoutbutton"><a href="logout.php" class="btn btn-danger" onclick="logout()">Logout</a></div>
-			        </li>
-			    </ul>
-			</div>
+	      
 	    </div>
 	  </div>
 	</nav>
