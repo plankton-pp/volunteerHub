@@ -1,14 +1,16 @@
-<?php 
-  
-$file = $_GET["file"] .".pdf"; 
-  
-// We will be outputting a PDF 
-header('Content-Type: application/pdf'); 
-  
-// It will be called downloaded.pdf 
-header('Content-Disposition: attachment; filename="doc.pdf"'); 
-  
-$imagpdf = file_put_contents($image, file_get_contents($file));  
-  
-echo $imagepdf; 
-?> 
+<?php
+$name= $_GET['nama'];
+
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/force-download');
+    header("Content-Disposition: attachment; filename=\"" . basename($name) . "\";");
+    header('Content-Transfer-Encoding: binary');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize($name));
+    ob_clean();
+    flush();
+    readfile("upload/".$name); //showing the path to the server where the file is to be download
+    exit;
+?>
