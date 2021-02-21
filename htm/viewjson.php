@@ -15,6 +15,7 @@
 			'attendants_target'	=>	$row["attendants_target"],
 			'attendants'		=>	$row["attendants"],
 			'due_date'			=>	$row["due_date"],
+			'detail'			=>	$row["detail"],
 			'expenses'			=>	$row["expenses"],
 			'advantage'			=>	$row["advantage"],
 			'type'				=>	$row["type"],
