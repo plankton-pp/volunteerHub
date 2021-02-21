@@ -12,9 +12,7 @@ session_start();
 	}
 	$rs=$conn->query($sql);
 	$mod=1;
-	$count=0;
 	while($row = $rs->fetch_assoc()) {
-		$count++;
 		if($mod%3==1){
 					echo "<tr>";
 				}
@@ -34,13 +32,23 @@ session_start();
 			    echo                    percentage($row['attendants_target'],$row['attendants'])."%";
 			    echo                "</span>";
 			    echo            "</div>";
-
 				echo		    "<div id=\"myProgress\">";
 				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_target'],$row['attendants'])."%\"></div>";
 				echo			"</div>";
 				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">ในขั้นกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
 				echo '<div id="buttonset'.$row["id"].'">';
 				echo "<button class='btn btn-primary' onclick='saynothing()'>Police</button>";
+				echo '<div id="buttonset'.$row["id"].'">';
+				echo "<script type=\"text/javascript\">
+		            	if(sessionStorage.getItem('loggedin')==null){
+		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<button class='btn btn-primary'id='btn-join' onclick='say()'>Join</button>\";
+		            	}else if(sessionStorage.getItem('loggedin')=='true'){
+		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<a href='detail.php?index=".$row['title']."' class='btn btn-primary'id='btn-join'>Join</a>\";
+		            	}
+			
+
+		            </script>
+		        ";
 		        echo "</div>";
 		        /*echo 			'<a href="detail.php?index='.$row['title'].'" class="btn btn-primary" id="btn-join">Join</a>';*/
 				echo		  "</div>";
@@ -52,7 +60,6 @@ session_start();
 				$mod++;
 	 // echo out the contents of each row into a table
 	}
-	echo "row_count".$count;
 	function percentage($target,$attendants){
 				$perc = $target/100;
 				return (int)$attendants/$perc;

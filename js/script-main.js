@@ -33,12 +33,8 @@ function showList(str) {
   xmlHttp.open("GET", url, true);
   xmlHttp.onreadystatechange = () => {
     if (xmlHttp.readyState == 4) {
-      let result = xmlHttp.responseText.split('row_count');
-      for(card in result){
-        if(card==0){
-          document.getElementById("table-card").innerHTML = card;
-        }
-      }
+      let result = xmlHttp.responseText;
+      document.getElementById("table-card").innerHTML = result;
       
     }
   }
