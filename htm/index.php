@@ -126,6 +126,24 @@ function logout(){
   <button onclick="showList('ชุมชนและสิ่งแวดล้อม')">Search Type</button>
   <a href="login.php" class="btn btn-primary">Login</a>
   <div id="logoutbutton"><a href="logout.php" class="btn btn-danger" onclick="logout()">Logout</a></div>
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">User<i class="fa fa-user-o" aria-hidden="true"></i><span class="caret"></span></a>
+  <ul class="dropdown-menu dropdown-menu-right">
+                <li class="item username">Ppchrpl Kwkunlya</li>
+                <li class="item"><a href="/th/users/dashboard/">ความคืบหน้า</a></li>
+                <li class="item"><a href="/th/users/donations/">รายการบริจาค</a></li>
+                <li class="item"><a href="/th/users/fundraisers/">เพจระดมทุน</a></li>
+
+                <li class="item"><a href="/th/users/update/profile/">แก้ไขข้อมูล</a></li>
+                <li class="item"><a href="/th/users/update/account/">แก้ไขรหัสผ่าน</a></li>
+                <li class="divider" role="separator"></li>
+                <li class="item">
+                    <form id="form-logout" method="post" action="/th/accounts/logout/">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="YvUWMpLWfWq3aRdK6Bduf2rPUr79Mw77HZRvONVdhS5ujkkMFJtqIA6J3Lh3nnID">
+                        <button class="btn btn-link" type="submit">ออกจากระบบ</button>
+                        
+                    </form>
+                </li>
+            </ul>
 </div>
 <div align="center" style="margin-top: 30px; margin-bottom: 30px;">			
 	<table id="table-card">
@@ -142,9 +160,9 @@ function logout(){
 				}
 				echo	"<td style=\"padding-left: 15px;\">";
 				echo		"<div class=\"card\">";
-				echo		  "<img alt=\"Avatar\"src=\"../img/".$row['img_banner']."\" style=\"width:100%\">";
+				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../img/'.$row['img_banner'].'" style="width:100%"/></a>';
 				echo		  "<div class=\"card-body\">";
-				echo		    "<a href=\"detail.php\" id=\"card-title\"><b>".$row['title']."</b></a>";
+				echo		   '<a href="detail.php?index='.$row['title'].'" id="card-title"><b>'.$row['title'].'</b></a>';
 				echo		    "<p class=\"card-text\">";
 				echo		    	$row['description'];
 				echo			"</p>";
@@ -156,7 +174,6 @@ function logout(){
 			    echo                    percentage($row['attendants_target'],$row['attendants'])."%";
 			    echo                "</span>";
 			    echo            "</div>";
-
 				echo		    "<div id=\"myProgress\">";
 				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_target'],$row['attendants'])."%\"></div>";
 				echo			"</div>";

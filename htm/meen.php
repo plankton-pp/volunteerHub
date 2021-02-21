@@ -52,7 +52,7 @@ session_start();
           <div class="form-group">
             <label for="phone">Phone</label>
             <input type="text" name="name" class="form-control" value="<?php echo$_SESSION['phone'];?>">
-          </div>          
+          </div>
         </div>
         <div class="modal-footer">          
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

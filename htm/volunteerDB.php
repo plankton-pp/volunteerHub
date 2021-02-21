@@ -19,13 +19,13 @@ session_start();
 				}
 				echo	"<td style=\"padding-left: 15px;\">";
 				echo		"<div class=\"card\">";
-				echo		  "<img alt=\"Avatar\"src=\"../img/".$row['img_banner']."\" style=\"width:100%\">";
+				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../img/'.$row['img_banner'].'" style="width:100%"/></a>';
 				echo		  "<div class=\"card-body\">";
-				echo		    "<a href=\"detail.php\" id=\"card-title\"><b>".$row['title']."</b></a>";
+				echo		   '<a href="detail.php?index='.$row['title'].'" id="card-title"><b>'.$row['title'].'</b></a>';
 				echo		    "<p class=\"card-text\">";
 				echo		    	$row['description'];
 				echo			"</p>";
-				echo		    "<hr style=\"margin: 0; padding-bottom: 5px;\" />";
+				echo		    "<hr style=\"margin-bottom: 10px; padding-bottom: 1px;\" />";
 				echo		    "<div class=\"funding-goal\">";
 			    echo                "<p id=\"target\">เป้าหมาย</p>";
 			    echo                "<span class=\"value \">".$row['attendants_target']." คน";

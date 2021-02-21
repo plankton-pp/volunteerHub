@@ -51,6 +51,7 @@ $conn->query("SET NAMES UTF8");
 	echo $title." ".$des." ".$target." ".$atten." ".$due." ".$datail." ".$expen." ".$expen." ".$advan." ".$type." ".$banner." ".$img;
 	}
 	$conn->close();
+	echo "<script>window.location.href = \"../htm/index.php\";</script>";
 
 
 ?>
