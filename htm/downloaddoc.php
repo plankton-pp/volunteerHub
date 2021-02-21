@@ -11,6 +11,6 @@ $name= $_GET['nama'];
     header('Content-Length: ' . filesize($name));
     ob_clean();
     flush();
-    readfile("upload/".$name); //showing the path to the server where the file is to be download
+    readfile($name); //showing the path to the server where the file is to be download
     exit;
 ?>
