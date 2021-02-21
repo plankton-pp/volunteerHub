@@ -17,7 +17,7 @@
 	$des = $_POST["description"];
 	$target = $_POST["target"];
 	$atten = $_POST["attendant"];
-	$due = $_POST["due_date"];
+	$due = new DateTime($_POST["due_date"]);
 	$datail = $_POST["detail"];
 	$expen = $_POST["expenses"];
 	$advan = $_POST["advantage"];

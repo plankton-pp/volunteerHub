@@ -5,13 +5,11 @@
 </head>
 <BODY>
 	<?php 
-	$_SESSION['ID']=$_GET['id'];
-	//echo "string".$_SESSION['ID'];
 
 	$conn=mysqli_connect("localhost", "root", "","volunteerhub");
 	$conn->query("SET NAMES UTF8");	
 
-	$sql = "SELECT * FROM volunteer WHERE id = '".$_SESSION['ID']."' ";
+	$sql = "SELECT * FROM volunteer WHERE id = '".$_SESSION['id']."' ";
 	$query= mysqli_query($conn,$sql);
 	
 	$result = mysqli_fetch_array($query);
@@ -55,7 +53,7 @@
 			<TR>
 				<TD>due_date	:</TD>
 				<TD>
-					<input type="text" name="due_date" maxlength"10" size="20" placeholder="Due date" value="<?php echo $result['due_date'];?>" required>
+					<input type="text" name="due_date" maxlength"10" size="20" value="<?php echo $result['due_date'];?>" required>
 				</TD>
 			</TR>
 			<TR>
