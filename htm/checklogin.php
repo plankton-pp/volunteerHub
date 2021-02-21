@@ -24,6 +24,9 @@ session_start();
                               $_SESSION["name"] = $row["name"];
                               $_SESSION["status"] = $row["status"];
                               $_SESSION['id'] = $row['id'];
+                              $_SESSION['name'] = $row['name'];
+                              $_SESSION['email'] = $row['email'];
+                              $_SESSION['phone'] = $row['telephone'];
                               echo "<script type=\"text/javascript\">
                                      sessionStorage.setItem('loggedin','true');
                                   </script>";

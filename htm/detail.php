@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php
+	// connect to the database
+session_start();
+?>
 	<link rel="shortcut icon" href="../img/volunteer.ico" />
 	<title>VolunteerHub</title>
 	<title>VolunteerHub</title>
 	<link rel="stylesheet" type="text/css" href="../css/style-detail.css">
+
 </head>
 <body id="body">
 	<?php
 	$index = $_GET['index'];
+	$_SESSION['index'] = $index;
+		
+	
+
 			// connect to the database
 			$conn=mysqli_connect("localhost", "root", "","volunteerhub");
 			$conn->query("SET NAMES UTF8");
@@ -27,7 +36,15 @@
 				echo '<div id="detail">'.$row['detail'].'</div></br>';
 				echo '<div>'.$row['expenses'].'</div></br>';
 				echo '<div>'.$row['advantage'].'</div></br>';
+
+				$_SESSION['acid'] = $row['id'];
+
 				$conn->close();
 	?>
+				
+	<p>
+		<a href="meen.php">go</a>
+	</p>
 </body>
+
 </html>
