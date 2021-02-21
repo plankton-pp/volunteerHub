@@ -1,5 +1,5 @@
 <?php
 	session_start();
 	session_destroy();
-	header("index.php");
+	echo "<script>window.location.href = \"../htm/index.php\";</script>";
 ?>

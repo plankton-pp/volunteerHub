@@ -102,6 +102,7 @@ body { font-family: sans-serif; }
 		//alert(title);
 		if(sessionStorage.getItem('loggedin')==null){
 			alert("login first");
+			document.getElementById("logoutbutton").innerHTML = "<p hidden>This paragraph should be hidden.</p>";
 		    document.getElementById("foreground"+id.toString()).innerHTML = "<button class='btn btn-primary'id='btn-join'>Join</button>";
 		}else if(sessionStorage.getItem('loggedin')=='true'){
 		    document.getElementById("foreground"+id.toString()).innerHTML = "<a href='detail.php?index="+title+"' class='btn btn-primary'id='btn-join'>Join</a>";
@@ -124,7 +125,7 @@ function logout(){
   <button onclick="showList('')" class="btn-primary">Search</button> 
   <button onclick="showList('ชุมชนและสิ่งแวดล้อม')">Search Type</button>
   <a href="login.php" class="btn btn-primary">Login</a>
-  <a href="logout.php" class="btn btn-danger" onclick="logout()">Logout</a>
+  <div id="logoutbutton"><a href="logout.php" class="btn btn-danger" onclick="logout()">Logout</a></div>
 </div>
 <div align="center" style="margin-top: 30px; margin-bottom: 30px;">			
 	<table id="table-card">
@@ -163,6 +164,7 @@ function logout(){
 				echo '<div id="buttonset'.$row["id"].'">';
 				echo "<script type=\"text/javascript\">
 		            	if(sessionStorage.getItem('loggedin')==null){
+		            		document.getElementById(\"logoutbutton\").innerHTML = \"<p hidden>This paragraph should be hidden.</p>\";
 		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<button class='btn btn-primary'id='btn-join' onclick='say()'>Join</button>\";
 		            	}else if(sessionStorage.getItem('loggedin')=='true'){
 		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<a href='detail.php?index=".$row['title']."' class='btn btn-primary'id='btn-join'>Join</a>\";
