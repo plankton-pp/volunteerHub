@@ -11,7 +11,7 @@
 		}
 
 		input[type=number], select {
-  			width: 10%;
+  			width: 100%;
   			padding: 12px 20px;
   			margin: 8px 0;
   			display: inline-block;
@@ -76,6 +76,16 @@
   			border-radius: 4px;
   			cursor: pointer;
 		}
+
+    input[type=file], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
 		input[type=reset]:hover {
   			background-color: #EF304A;

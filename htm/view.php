@@ -38,19 +38,20 @@
 		  data-page-list="[10, 25, 50, 100, all]"
 		  data-click-to-select="true"
 		  data-url="viewjson.php">
-	  <thead>
+	  <thead class="thead-dark">
 	    <tr>
-	      <th data-field="id">ID</th>
-	      <th data-field="title">ชื่อกิจกรมม</th>
-	      <th data-field="description">คำอธิบาย</th>
-	      <th data-field="attendants_target">จำนวนคนที่ต้องการ</th>
-	      <th data-field="attendants">จำนวนคนที่เข้าร่วม</th>
-	      <th data-field="due_date">วันที่จัดกิจกรรม</th>
-	      <th data-field="expenses">ค่าใช้จ่าย</th>
-	      <th data-field="advantage">ประโยชน์ที่ได้รับ</th>
-	      <th data-field="type">ประเภทกิจกรรม</th>
-	      <th data-field="img_banner">ภาพปก</th>
-	      <th data-field="img">ภาพอื่น ๆ</th>
+	      <th data-width="100" data-field="id">ID</th>
+	      <th data-width="100" data-field="title">ชื่อกิจกรรม</th>
+	      <th data-width="100" data-field="description">คำอธิบาย</th>
+	      <th data-width="100" data-field="attendants_target">จำนวนคนที่ต้องการ</th>
+	      <th data-width="100" data-field="attendants">จำนวนคนที่เข้าร่วม</th>
+	      <th data-width="100" data-field="due_date">วันที่จัดกิจกรรม</th>
+	      <th data-width="100" data-field="expenses">ค่าใช้จ่าย</th>
+	      <th data-width="100" data-field="advantage">ประโยชน์ที่ได้รับ</th>
+	      <th data-width="100" data-field="type">ประเภทกิจกรรม</th>
+	      <th data-width="100" data-field="img_banner">ภาพปก</th>
+	      <th data-width="100" data-field="img">ภาพอื่น ๆ</th>
+        <th data-width="100" data-align="center" data-field="operate" data-search-formatter="false" data-formatter="operateFormatter" data-events="operateEvents">Action</th>
 	    </tr>
 	  </thead>
 	</table>
