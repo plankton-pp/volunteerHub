@@ -29,7 +29,5 @@
 				echo '<div>'.$row['advantage'].'</div></br>';
 				$conn->close();
 	?>
-
-	Hello!!!!!!!
 </body>
 </html>

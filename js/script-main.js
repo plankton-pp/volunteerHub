@@ -32,10 +32,14 @@ function showList(str) {
   url = url+"?search="+search;
   xmlHttp.open("GET", url, true);
   xmlHttp.onreadystatechange = () => {
-    var result = "";
     if (xmlHttp.readyState == 4) {
-      var str = xmlHttp.responseText;
-      document.getElementById("table-card").innerHTML = str;
+      let result = xmlHttp.responseText.split('row_count');
+      for(card in result){
+        if(card==0){
+          document.getElementById("table-card").innerHTML = card;
+        }
+      }
+      
     }
   }
   xmlHttp.send(null);

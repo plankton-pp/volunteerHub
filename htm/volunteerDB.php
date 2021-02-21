@@ -1,5 +1,6 @@
 <?php
 	// connect to the database
+session_start();
 	$conn=mysqli_connect("localhost", "root", "","volunteerhub");
 	$conn->query("SET NAMES UTF8");
 	// get results from database
@@ -11,7 +12,9 @@
 	}
 	$rs=$conn->query($sql);
 	$mod=1;
+	$count=0;
 	while($row = $rs->fetch_assoc()) {
+		$count++;
 		if($mod%3==1){
 					echo "<tr>";
 				}
@@ -36,7 +39,10 @@
 				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_target'],$row['attendants'])."%\"></div>";
 				echo			"</div>";
 				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">ในขั้นกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
-				echo 			'<a href="detail.php?index='.$row['title'].'" class="btn btn-primary" id="btn-join">Join</a>';
+				echo '<div id="buttonset'.$row["id"].'">';
+				echo "<button class='btn btn-primary' onclick='saynothing()'>Police</button>";
+		        echo "</div>";
+		        /*echo 			'<a href="detail.php?index='.$row['title'].'" class="btn btn-primary" id="btn-join">Join</a>';*/
 				echo		  "</div>";
 				echo		"</div>";
 				echo	"</td>";
@@ -46,6 +52,7 @@
 				$mod++;
 	 // echo out the contents of each row into a table
 	}
+	echo "row_count".$count;
 	function percentage($target,$attendants){
 				$perc = $target/100;
 				return (int)$attendants/$perc;

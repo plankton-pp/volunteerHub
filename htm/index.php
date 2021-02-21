@@ -93,6 +93,18 @@ body { font-family: sans-serif; }
   color: white;
 }
 </style>
+<script type="text/javascript">
+		function say(str){
+  alert("login first");
+}
+	function saynothing(){
+		if(sessionStorage.getItem('loggedin')==null){
+		    document.getElementById("buttonset1").innerHTML = "<button class='btn btn-primary'id='btn-join'>cannot Join</button>";
+		}else if(sessionStorage.getItem('loggedin')=='true'){
+		    document.getElementById("buttonset1").innerHTML = "<a href='detail.php?index=1' class='btn btn-primary'id='btn-join'>Joinable</a>";
+		            	}
+	}
+</script>
 <!-- Flickity HTML init -->
 <div class="gallery js-flickity"
   data-flickity-options='{ "wrapAround": true }'>
@@ -104,6 +116,7 @@ body { font-family: sans-serif; }
   <h3>หมวดหมู่กิจกรรม</h3>
   <button onclick="showList('')" class="btn-primary">Search</button> 
   <button onclick="showList('ชุมชนและสิ่งแวดล้อม')">Search Type</button>
+  <a href="login.php" class="btn btn-primary">Login</a>
 </div>
 <div align="center" style="margin-top: 30px; margin-bottom: 30px;">			
 	<table id="table-card">
@@ -139,7 +152,19 @@ body { font-family: sans-serif; }
 				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_target'],$row['attendants'])."%\"></div>";
 				echo			"</div>";
 				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">ในขั้นกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
-				echo 			'<a href="detail.php?index='.$row['title'].'" class="btn btn-primary" id="btn-join">Join</a>';
+				echo '<div id="buttonset'.$row["id"].'">';
+				echo "<script type=\"text/javascript\">
+		            	if(sessionStorage.getItem('loggedin')==null){
+		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<button class='btn btn-primary'id='btn-join' onclick='say()'>Join</button>\";
+		            	}else if(sessionStorage.getItem('loggedin')=='true'){
+		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<a href='detail.php?index=".$row['title']."' class='btn btn-primary'id='btn-join'>Join</a>\";
+		            	}
+			
+
+		            </script>
+		        ";
+		        echo "</div>";
+		        /*echo 			'<a href="detail.php?index='.$row['title'].'" class="btn btn-primary" id="btn-join">Join</a>';*/
 				echo		  "</div>";
 				echo		"</div>";
 				echo	"</td>";
