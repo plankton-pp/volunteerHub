@@ -5,6 +5,10 @@ session_start();
 ?>
 <html>
 <head>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 	<link rel="shortcut icon" href="../img/volunteer.ico" />
 	<title>VolunteerHub</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,10 +52,24 @@ session_start();
 	          <a class="nav-link"  href="downloaddoc.php?nama=doc.pdf" >Dowload</a>
 	        </li>
 	      </ul>
-	      <form class="d-flex">
-	        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-	        <button class="btn btn-outline-success" type="submit">Search</button>
-	      </form>
+	      <!-- Split button -->
+			<div class="btn-group btn-group-left">
+			    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span>
+			 <span class="sr-only"><div id="profilename">Profile</div></span>
+			    </button>
+			    <ul class="dropdown-menu">
+			        <li><a href="#">Action</a>
+			        </li>
+			        <li><a href="#">Another action</a>
+			        </li>
+			        <li><a href="#">Something else here</a>
+			        </li>
+			        <li role="separator" class="divider"></li>
+			        <li>
+			        	<div id="logoutbutton"><a href="logout.php" class="btn btn-danger" onclick="logout()">Logout</a></div>
+			        </li>
+			    </ul>
+			</div>
 	    </div>
 	  </div>
 	</nav>
@@ -125,26 +143,25 @@ function logout(){
   <button onclick="showList('')" class="btn-primary">Search</button> 
   <button onclick="showList('ชุมชนและสิ่งแวดล้อม')">Search Type</button>
   <a href="login.php" class="btn btn-primary">Login</a>
-  <div id="logoutbutton"><a href="logout.php" class="btn btn-danger" onclick="logout()">Logout</a></div>
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">User<i class="fa fa-user-o" aria-hidden="true"></i><span class="caret"></span></a>
-  <ul class="dropdown-menu dropdown-menu-right">
-                <li class="item username">Ppchrpl Kwkunlya</li>
-                <li class="item"><a href="/th/users/dashboard/">ความคืบหน้า</a></li>
-                <li class="item"><a href="/th/users/donations/">รายการบริจาค</a></li>
-                <li class="item"><a href="/th/users/fundraisers/">เพจระดมทุน</a></li>
-
-                <li class="item"><a href="/th/users/update/profile/">แก้ไขข้อมูล</a></li>
-                <li class="item"><a href="/th/users/update/account/">แก้ไขรหัสผ่าน</a></li>
-                <li class="divider" role="separator"></li>
-                <li class="item">
-                    <form id="form-logout" method="post" action="/th/accounts/logout/">
-                        <input type="hidden" name="csrfmiddlewaretoken" value="YvUWMpLWfWq3aRdK6Bduf2rPUr79Mw77HZRvONVdhS5ujkkMFJtqIA6J3Lh3nnID">
-                        <button class="btn btn-link" type="submit">ออกจากระบบ</button>
-                        
-                    </form>
-                </li>
-            </ul>
+  
+<!-- Split button -->
+<div class="btn-group btn-group-left">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span>
+ <span class="sr-only"><div id="profilename"></div></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#">Action</a>
+        </li>
+        <li><a href="#">Another action</a>
+        </li>
+        <li><a href="#">Something else here</a>
+        </li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a>
+        </li>
+    </ul>
 </div>
+
 <div align="center" style="margin-top: 30px; margin-bottom: 30px;">			
 	<table id="table-card">
 		<?php

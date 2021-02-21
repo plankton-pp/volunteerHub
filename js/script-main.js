@@ -40,3 +40,4 @@ function showList(str) {
   }
   xmlHttp.send(null);
 }
+document.querySelector("body > div.header > div.header-content > div.container > nav > ul.nav-list.-small.-login");
