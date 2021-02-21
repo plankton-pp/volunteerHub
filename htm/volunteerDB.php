@@ -37,10 +37,9 @@ session_start();
 				echo			"<div id=\"myBar\" style=\"width: ".percentage($row['attendants_target'],$row['attendants'])."%\"></div>";
 				echo			"</div>";
 				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">ในขั้นกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
-				echo '<div id="buttonset'.$row["id"].'">';
-				echo "<button class='btn btn-primary' onclick='saynothing(".$row['id'].",\"".$row['title']."\")'>Police</button>";
-				echo '<div id="buttonset'.$row["id"].'">';
-		        echo "</div>";
+				//echo '<div id="buttonset'.$row["id"].'" onload="saynothing('.$row['id'].',"'.$row['title'].'")">';
+				//echo 'saynothing('.$row['id'].',"'.$row['title'].'");';
+				echo "<div id = \"foreground".$row["id"]."\"onload=\"alert('The Script will load now.')\"><button class='btn btn-primary' id='btn-join' onclick='saynothing(".$row['id'].",\"".$row['title']."\")'>Join</button></div>";
 		        /*echo 			'<a href="detail.php?index='.$row['title'].'" class="btn btn-primary" id="btn-join">Join</a>';*/
 				echo		  "</div>";
 				echo		"</div>";
