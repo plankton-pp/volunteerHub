@@ -98,13 +98,19 @@ body { font-family: sans-serif; }
   alert("login first");
 }
 	function saynothing(id, title){
-		alert(title);
+		document.getElementById("foreground"+id.toString()).innerHTML="<div><p></p></div>";
+		//alert(title);
 		if(sessionStorage.getItem('loggedin')==null){
-		    document.getElementById("buttonset"+id.toString()).innerHTML = "<button class='btn btn-primary'id='btn-join'>cannot Join</button>";
+			alert("login first");
+		    document.getElementById("foreground"+id.toString()).innerHTML = "<button class='btn btn-primary'id='btn-join'>Join</button>";
 		}else if(sessionStorage.getItem('loggedin')=='true'){
-		    document.getElementById("buttonset"+id.toString()).innerHTML = "<a href='detail.php?index="+title+"' class='btn btn-primary'id='btn-join'>Joinable</a>";
+		    document.getElementById("foreground"+id.toString()).innerHTML = "<a href='detail.php?index="+title+"' class='btn btn-primary'id='btn-join'>Join</a>";
 		            	}
 	}
+function logout(){
+	sessionStorage.clear();
+	//
+}
 </script>
 <!-- Flickity HTML init -->
 <div class="gallery js-flickity"
@@ -118,6 +124,7 @@ body { font-family: sans-serif; }
   <button onclick="showList('')" class="btn-primary">Search</button> 
   <button onclick="showList('ชุมชนและสิ่งแวดล้อม')">Search Type</button>
   <a href="login.php" class="btn btn-primary">Login</a>
+  <a href="logout.php" class="btn btn-danger" onclick="logout()">Logout</a>
 </div>
 <div align="center" style="margin-top: 30px; margin-bottom: 30px;">			
 	<table id="table-card">
@@ -140,7 +147,7 @@ body { font-family: sans-serif; }
 				echo		    "<p class=\"card-text\">";
 				echo		    	$row['description'];
 				echo			"</p>";
-				echo		    "<hr style=\"margin: 0; padding-bottom: 5px;\" />";
+				echo		    "<hr style=\"margin-bottom: 10px; padding-bottom: 1px;\" />";
 				echo		    "<div class=\"funding-goal\">";
 			    echo                "<p id=\"target\">เป้าหมาย</p>";
 			    echo                "<span class=\"value \">".$row['attendants_target']." คน";
