@@ -97,7 +97,8 @@ body { font-family: sans-serif; }
 		function say(str){
   alert("login first");
 }
-	function saynothing(){
+	function saynothing(str){
+		alert(str);
 		if(sessionStorage.getItem('loggedin')==null){
 		    document.getElementById("buttonset1").innerHTML = "<button class='btn btn-primary'id='btn-join'>cannot Join</button>";
 		}else if(sessionStorage.getItem('loggedin')=='true'){

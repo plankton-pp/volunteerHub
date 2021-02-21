@@ -39,7 +39,7 @@
     <div class="container">
         <div class="card card-register mx-auto" style="max-width: 30rem; background-color: rgba(86, 86, 86, 0.6);color: #fff; margin-top: 100px;">
             <div class="card-body">
-                <form action="add-register.php" method="POST">
+                <form action="addregister.php" method="POST">
                     <div class="row">
                         <div class="col-md-12">
                             <span><i class="fas fa-user"></i><font size ="12px"> REGISTER </font> </span>
