@@ -37,7 +37,7 @@ session_start();
 				echo			"</div>";
 				echo			"<p id=\"target\">".duedate($row['due_date'])." วัน <span class=\"hide-text\">ในขั้นกำลังดำเนินโครงการแล้ว</span>".$row['attendants']." คน</p>";
 				echo '<div id="buttonset'.$row["id"].'">';
-				echo "<button class='btn btn-primary' onclick='saynothing(".$row['id'].")'>Police</button>";
+				echo "<button class='btn btn-primary' onclick='saynothing(".$row['id'].",\"".$row['title']."\")'>Police</button>";
 				echo '<div id="buttonset'.$row["id"].'">';
 		        echo "</div>";
 		        /*echo 			'<a href="detail.php?index='.$row['title'].'" class="btn btn-primary" id="btn-join">Join</a>';*/

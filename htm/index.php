@@ -97,12 +97,12 @@ body { font-family: sans-serif; }
 		function say(str){
   alert("login first");
 }
-	function saynothing(str){
-		alert(str);
+	function saynothing(id, title){
+		alert(title);
 		if(sessionStorage.getItem('loggedin')==null){
-		    document.getElementById("buttonset1").innerHTML = "<button class='btn btn-primary'id='btn-join'>cannot Join</button>";
+		    document.getElementById("buttonset"+id.toString()).innerHTML = "<button class='btn btn-primary'id='btn-join'>cannot Join</button>";
 		}else if(sessionStorage.getItem('loggedin')=='true'){
-		    document.getElementById("buttonset1").innerHTML = "<a href='detail.php?index=1' class='btn btn-primary'id='btn-join'>Joinable</a>";
+		    document.getElementById("buttonset"+id.toString()).innerHTML = "<a href='detail.php?index="+title+"' class='btn btn-primary'id='btn-join'>Joinable</a>";
 		            	}
 	}
 </script>
