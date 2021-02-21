@@ -1,11 +1,6 @@
 <html>
 <head>
 <?php session_start();  ?>
-<?php 
-	$_SESSION['ID']=$_GET['id'];
-
-	//echo "string".$_SESSION['ID']."<BR>";
-	?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 </head>

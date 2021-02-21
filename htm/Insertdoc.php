@@ -1,8 +1,8 @@
 <?php session_start();  ?>
 <?php 
-	$id = $_SESSION['ID'];
+	$id = $_SESSION['id'];
 
-	echo "string".$_SESSION['ID']."<BR>";
+	echo "string".$_SESSION['id']."<BR>";
 	?>
 
 
@@ -56,12 +56,12 @@ $rs=$conn->query($sql);
 
 if(!$rs){
 	
-	echo $_SESSION['ID']."+".$userphone."+".$perphone."+".$file;
+	echo $_SESSION['id']."+".$userphone."+".$perphone."+".$file;
 	echo "<br>fale";
-	echo "<p><a href='.php'>Go to Home</a></p>";
+	echo "<p><a href='index.php'>Go to Home</a></p>";
 }else{
 	echo "Insertion Successfully!!";
-	echo "<p><a href='view.php'>Go to Home</a></p>";
+	echo "<p><a href='index.php'>Go to Home</a></p>";
 }
 
 
