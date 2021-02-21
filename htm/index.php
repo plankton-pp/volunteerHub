@@ -29,7 +29,23 @@ session_start();
 	          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" href="">Link</a>
+	          <a class="nav-link" href="insertForm.htm">InsertForm</a>
+	        </li>
+	   
+	        <li class="nav-item">
+	          <a class="nav-link" href="view.php">view</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="editForm.php">EditForm</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="docForm.php">docForm</a>
+	        </li>
+	       <li class="nav-item">
+	          <a class="nav-link" href="viewdoc.php">viewdoc</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="downloaddoc.php">DowloadDoc</a>
 	        </li>
 	      </ul>
 	      <form class="d-flex">
