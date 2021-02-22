@@ -1,11 +1,11 @@
 <?php
 	$res_text;
-	$name = $_GET["name"];
+	$search = $_GET["search"];
 	// connect to the database
 	$conn=mysqli_connect("localhost", "root", "","volunteerhub");
 	$conn->query("SET NAMES UTF8");
 	// get results from database
-	$sql="SELECT * FROM volunteer WHERE title LIKE '%$name%'";
+	$sql="SELECT * FROM volunteer WHERE title LIKE '%$search%'";
 	$rs=$conn->query($sql);
 	$suggestion = array();
 	$index = 0;

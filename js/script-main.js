@@ -56,7 +56,7 @@ function callResult() {
 function searchName(str) {
   createXMLHttpRequest();
   var url = "searchName.php";
-  url = url + "?name=" + str;
+  url = url + "?search=" + str;
   xmlHttp.open("GET", url, true);
   xmlHttp.onreadystatechange = () => {
     var result = "";
