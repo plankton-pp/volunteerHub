@@ -5,7 +5,10 @@ $filename = $_FILES['img']['name'];
 $filename2 = $_FILES['img_banner']['name'];
 
 // Location
-$targetPath = "upload/";
+//$target_docPath = "upload/document";
+$target_imgPath = "upload/img/";
+$target_bannerPath = "upload/img_banner/";
+
 $location = $filename;
 $location2 = $filename2;
 
@@ -21,12 +24,12 @@ $image_ext = array("jpg","png","jpeg","gif","pdf");
 
 $response = 0;
 if(in_array($file_extension,$image_ext)&&in_array($file_extension2,$image_ext)){
-
+//แปะ session id ด้วย !
 	$new_name = rand() . '.'. $filename; 
 	$new_name2 = rand() . '.'. $filename2; 
   // Upload file
-  if(move_uploaded_file($_FILES['img']['tmp_name'],$targetPath.$new_name ) && move_uploaded_file($_FILES['img_banner']['tmp_name'],$targetPath.$new_name2)){
-    $response = $targetPath;
+  if(move_uploaded_file($_FILES['img']['tmp_name'],$target_imgPath.$new_name ) && move_uploaded_file($_FILES['img_banner']['tmp_name'],$target_bannerPath.$new_name2)){
+    $response = $target_imgPath;
   }
 }
 
