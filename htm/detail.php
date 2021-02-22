@@ -38,7 +38,7 @@ session_start();
 			echo '<div id="main">';
 				echo '<div id="type" align="center" style="margin-left: 0%;">'.$row['type'].'</div>';
 				echo '<div id="title" align="center"> <h2>'.$row['title'].'</h2></div></br>';
-				echo '<img alt="img include" align="center" src="../img/'.$row['img'].'"></br>';
+				echo '<img alt="img include" align="center" src="../upload/img/'.$row['img'].'"></br>';
 				echo '<div id="decription" align="center">'.$row['description'].'</div></br>';
 			echo '</div>';
 	?>

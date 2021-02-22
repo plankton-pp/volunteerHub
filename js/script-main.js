@@ -40,4 +40,16 @@ function showList(str) {
   }
   xmlHttp.send(null);
 }
-document.querySelector("body > div.header > div.header-content > div.container > nav > ul.nav-list.-small.-login");
+function callResult() {
+  createXMLHttpRequest();
+  var search = 3;
+  var url = "editFormResult.php";
+  url = url+"?id="+search;
+  xmlHttp.open("GET", url, true);
+  xmlHttp.onreadystatechange = () => {
+    if (xmlHttp.readyState == 4) {
+      alert('success!');
+    }
+  }
+  xmlHttp.send(null);
+}
