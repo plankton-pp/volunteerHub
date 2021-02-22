@@ -197,7 +197,7 @@
        }
 
        function formatPic(value, row, index) {
-         return "<img src=upload/img_banner/"+ row.img_banner +">"
+         return "<img width='150px'src=upload/img_banner/"+ row.img_banner +">"
        }
 
   
