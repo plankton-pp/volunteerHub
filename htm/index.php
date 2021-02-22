@@ -41,21 +41,15 @@ session_start();
 	        <li class="nav-item">
 	          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
 	        </li>
-	        <li class="nav-item">
+	        <li class="nav-item" id="insertForm">
 	          <a class="nav-link" href="insertForm.php">InsertForm</a>
 	        </li>
 	   
-	        <li class="nav-item">
+	        <li class="nav-item" id="view">
 	          <a class="nav-link" href="view.php">view</a>
 	        </li>
-	        <li class="nav-item">
+	        <li class="nav-item" id="editFormTest">
 	          <a class="nav-link" href="editFormTest.php">EditForm</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="docForm.php">docForm</a>
-	        </li>
-	       <li class="nav-item">
-	          <a class="nav-link" href="viewdoc.php">viewdoc</a>
 	        </li>
 	        <li class="nav-item">
 	          <a class="nav-link"  href="tutorial.php" >Tutorial</a>
@@ -212,6 +206,8 @@ function logout(){
 		            	if(sessionStorage.getItem('loggedin')==null){
 		            		document.getElementById(\"logoutbutton\").innerHTML = \"<a href='login.php' class='btn btn-primary'>Login</a>\";
 		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<button class='btn btn-primary'id='btn-join' onclick='say()'>Join</button>\";
+		            		document.getElementById(\"insertForm\").innerHTML = \"<p></p>\";
+		            		document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
 		            	}else if(sessionStorage.getItem('loggedin')=='true'){
 		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<a href='detail.php?index=".$row['title']."' class='btn btn-primary'id='btn-join'>Join</a>\";
 		            	}
