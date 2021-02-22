@@ -228,7 +228,9 @@ function logout(){
 			}
 			function percentage($target,$attendants){
 				$perc = $target/100;
-				return (int)$attendants/$perc;
+				$res = $attendants/$perc;
+				$ret = number_format((float)$res, 2, '.', '');
+				return $ret;
 			}
 			function duedate($due_date){
 				$datetime = new DateTime($due_date);
