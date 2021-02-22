@@ -31,17 +31,11 @@
             <a class="nav-link" href="insertForm.php">InsertForm</a>
           </li>
      
-          <li class="nav-item">
+          <li class="nav-item" id="view">
             <a class="nav-link" href="view.php">view</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="editFormTest">
             <a class="nav-link" href="editFormTest.php">EditForm</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="docForm.php">docForm</a>
-          </li>
-         <li class="nav-item">
-            <a class="nav-link" href="viewdoc.php">viewdoc</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="tutorial.php" >Tutorial</a>
@@ -59,6 +53,19 @@
   </nav>
 </head>
 <body>
+  <?php
+    echo "<script type=\"text/javascript\">
+                  if(sessionStorage.getItem('loggedin')==null){
+                    document.getElementById(\"insertForm\").innerHTML = \"<p></p>\";
+                    document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
+                  }else if(sessionStorage.getItem('loggedin')=='true'){
+                   
+                  }
+      
+
+                </script>
+            ";
+  ?>
 	<style type="text/css">
       #profile{
     width: 150px;
