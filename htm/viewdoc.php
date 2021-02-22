@@ -3,6 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>View Register Database</title>
 <script src="showName.js"></script>
+<?php include'navbar.php';?>
 </head>
 <body> 
 	

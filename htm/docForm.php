@@ -1,6 +1,8 @@
 <html>
 <head>
-<?php session_start();  ?>
+<?php session_start();
+include 'navbar.php';
+?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 </head>

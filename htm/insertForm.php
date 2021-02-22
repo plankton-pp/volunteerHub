@@ -15,6 +15,7 @@
           background-size: 100% 100%;
    }
 	</style>
+	<?php include'navbar.php';?>
 </head>
 <body>
 	

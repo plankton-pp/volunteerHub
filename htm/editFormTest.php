@@ -40,7 +40,6 @@
   
   }
   ?>
-  ?>
  <br/>  
            <div class="container">  
                 <h3 align="center">Upload Multiple Image by Using PHP Ajax Jquery with Bootstrap Modal</h3><br />  
@@ -65,10 +64,15 @@
                             <div class="modal-body">
                             <form method='post' action='' enctype="multipart/form-data" id="my-form">
                                 <!--User Information-->
-                                <!--Username-->
-                                <label for="userid">User Name</label>
-                                <input type="text" name="userid" size="20" value="<?php echo $result_user['username'];?>" class='form-control'/><br>
-
+                                <h4><b>User Information</b></h4>
+                                    <!--Username-->
+                                    <label for="userid">User Name</label>
+                                    <input type="text" name="userid" size="20" value="<?php echo $result_user['username'];?>" class='form-control'/><br>
+                                <hr/>
+                                <!--Detail Information-->
+                                    <label for="userid">Title</label>
+                                    <textarea name="title" cols="40" rows="5"  size="20" placeholder="Title" required><?php echo $result['title'];?></textarea>
+                                <hr/>
                                 <!--Image-->
                                 <label for="file">Image</label>
                                 <input type='file' name='img' id='img' value="" class='form-control' ><br>
@@ -121,4 +125,4 @@ $(document).ready(function(){
 });
  </script>  
 </body>
-</html>>
+</html>
