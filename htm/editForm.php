@@ -9,13 +9,13 @@
 	$conn=mysqli_connect("localhost", "root", "","volunteerhub");
 	$conn->query("SET NAMES UTF8");	
 
-	$sql = "SELECT * FROM volunteer WHERE id = '".$_GET['id']."' ";
+	$sql = "SELECT * FROM volunteer WHERE id = '".$_SESSION['id']."' ";
 	$query= mysqli_query($conn,$sql);
 	
 	$result = mysqli_fetch_array($query);
 
 	if(!$result){
-		echo "Not found ID=".$_GET['id'];
+		echo "Not found ID=".$_SESSION['id'];
 	}else
 	{
 		//echo "error check id=".$result['ID'];
