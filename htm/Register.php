@@ -39,7 +39,7 @@
     <div class="container">
         <div class="card card-register mx-auto" style="max-width: 30rem; background-color: rgba(86, 86, 86, 0.6);color: #fff; margin-top: 100px;">
             <div class="card-body">
-                <form action="addregister.php" method="POST">
+                <form action="addregister.php" method="POST" id="registerForm" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-12">
                             <span><i class="fas fa-user"></i><font size ="12px"> REGISTER </font> </span>
@@ -49,7 +49,7 @@
                     <div class="form-group">
                         <div class="form-label-group">
                             <label><font size ="5px"> USERNAME</font></label>
-                            <input type="text" name="username" class="form-control">
+                            <input type="text" name="username" class="form-control" required>
                                 
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                             <div class="col-md-12">
                                 <div class="form-label-group">
                                     <label><font size ="5px"> PASSWORD </font></label>
-                                    <input type="password" name="password" class="form-control">
+                                    <input type="password" name="password" class="form-control" required>
                                         
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                             <div class="col-md-12">
                                 <div class="form-label-group">
                                     <label><font size ="5px"> NAME </font></label>
-                                    <input type="text" name="name" class="form-control">
+                                    <input type="text" name="name" class="form-control" required>
                                         
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
                             <div class="col-md-12">
                                 <div class="form-label-group">
                                     <label><font size ="5px"> E-MAIL</font></label>
-                                    <input type="text" name="email" class="form-control">
+                                    <input type="email" name="email" class="form-control" required>
                                         
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                             <div class="col-md-12">
                                 <div class="form-label-group">
                                     <label><font size ="5px">ADDRESS</font></label>
-                                    <input type="text" name="address" class="form-control">
+                                    <input type="text" name="address" class="form-control" required>
                                         
                                 </div>
                             </div>
@@ -102,12 +102,38 @@
                             <div class="col-md-12">
                                 <div class="form-label-group">
                                     <label><font size ="5px">PHONE</font></label>
-                                    <input type="text" name="telephone" class="form-control">
+                                    <input type="text" name="telephone" class="form-control" required>
                                         
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="form-label-group">
+                                    <label><font size ="5px">PHOTO</font></label>
+                                    <input type = "file" accept="image/*" name = "photo" id="photo" required>
+                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="form-label-group">
+                                    <label><font size ="5px">TYPE</font></label><br>
+                                    <select name="status" id="status" form="registerForm"  >
+                                      <option value="user">User</option>
+                                      <option value="agency">Agency</option>
+                                    </select>
+                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 					
                     <button class="btn btn-primary btn-md w-50">REGISTER</button>
                     <!-- <a class="btn btn-primary btn-block" href="login.php">Register</a> -->

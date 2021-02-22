@@ -33,7 +33,10 @@ session_start();
                               if($_SESSION["status"]=="admin"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
                                 echo "<script>window.location.href = \"../htm/index.php\";</script>";
                               }
-                              if ($_SESSION["status"]==null){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
+                              if ($_SESSION["status"]=="user"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
+                                echo "<script>window.location.href = \"../htm/index.php\";</script>";
+                              }
+                              if ($_SESSION["status"]=="agency"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
                                 echo "<script>window.location.href = \"../htm/index.php\";</script>";
                               }
                           }else{
