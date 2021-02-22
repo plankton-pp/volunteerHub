@@ -7,19 +7,20 @@ session_start();
 	// get results from database
 	if (isset($_GET["search"])&&$_GET["search"]<>"") {
 		 $search = $_GET["search"];
-		 $sql="SELECT * FROM volunteer WHERE type LIKE '%$search%'";
+		 $sql="SELECT * FROM volunteer WHERE type LIKE '%$search%' AND status LIKE'pass'";
 	} else {
 		 $sql="SELECT * FROM volunteer";
 	}
 	$rs=$conn->query($sql);
 	$mod=1;
-	while($row = $rs->fetch_assoc()) {
+	if($row = $rs->fetch_assoc()){
+		while($row = $rs->fetch_assoc()) {
 		if($mod%3==1){
 					echo "<tr>";
 				}
 				echo	"<td style=\"padding-left: 15px;\">";
 				echo		"<div class=\"card\">";
-				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../img/'.$row['img_banner'].'" style="width:100%"/></a>';
+				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../htm/upload/img_banner/'.$row['img_banner'].'" style="width:100%"/></a>';
 				echo		  "<div class=\"card-body\">";
 				echo		   '<a href="detail.php?index='.$row['title'].'" id="card-title"><b>'.$row['title'].'</b></a>';
 				echo		    "<p class=\"card-text\">";
@@ -48,8 +49,10 @@ session_start();
 					echo	"</tr>";
 				}
 				$mod++;
-	 // echo out the contents of each row into a table
+		 // echo out the contents of each row into a table
+		}
 	}
+	
 	function percentage($target,$attendants){
 				$perc = $target/100;
 				return (int)$attendants/$perc;

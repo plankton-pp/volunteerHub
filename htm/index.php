@@ -151,16 +151,17 @@ function logout(){
 			// connect to the database
 			$conn=mysqli_connect("localhost", "root", "","volunteerhub");
 			$conn->query("SET NAMES UTF8");
-			$sql="SELECT * FROM volunteer";
+			$sql="SELECT * FROM volunteer WHERE status LIKE'pass'";
 			$rs=$conn->query($sql);
 			$mod=1;
-			while($row = $rs->fetch_assoc()) {
+			if($row = $rs->fetch_assoc()){
+				while($row = $rs->fetch_assoc()) {
 				if($mod%3==1){
 					echo "<tr>";
 				}
 				echo	"<td style=\"padding-left: 15px;\">";
 				echo		"<div class=\"card\">";
-				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../htm/upload/img_cover/'.$row['img_banner'].'" style="width:100%"/></a>';
+				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../htm/upload/img_banner/'.$row['img_banner'].'" style="width:100%"/></a>';
 				echo		  "<div class=\"card-body\">";
 				echo		   '<a href="detail.php?index='.$row['title'].'" id="card-title"><b>'.$row['title'].'</b></a>';
 				echo		    "<p class=\"card-text\">";
@@ -199,6 +200,7 @@ function logout(){
 					echo	"</tr>";
 				}
 				$mod++;
+				}
 			}
 			function percentage($target,$attendants){
 				$perc = $target/100;
