@@ -40,7 +40,7 @@ session_start();
 	          <a class="nav-link" href="view.php">view</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" href="editForm.php">EditForm</a>
+	          <a class="nav-link" href="editFormTest.php">EditForm</a>
 	        </li>
 	        <li class="nav-item">
 	          <a class="nav-link" href="docForm.php">docForm</a>

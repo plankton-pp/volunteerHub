@@ -15,7 +15,7 @@ session_start();
 	$mod=1;
 	if($row = $rs->fetch_assoc()){
 		while($row = $rs->fetch_assoc()) {
-		if($mod%3==1){
+		if($mod%4==1){
 					echo "<tr>";
 				}
 				echo	"<td style=\"padding-left: 15px;\">";
@@ -45,7 +45,7 @@ session_start();
 				echo		  "</div>";
 				echo		"</div>";
 				echo	"</td>";
-				if($mod%3==0){
+				if($mod%4==0){
 					echo	"</tr>";
 				}
 				$mod++;
