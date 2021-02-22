@@ -126,13 +126,12 @@
                     <table
                       id="table"
                       data-toggle="table"
-                      data-url="json/data1.json">
+                      data-url="viewjson.php">
                       <thead>
                         <tr>
-                          <th data-field="id">ID</th>
-                          <th data-field="name">Item Name</th>
-                          <th data-field="price">Item Price</th>
-                        </tr>
+                          <th data-field="id">Id</th>
+                          <th data-field="title">ชื่อกิจกรรม</th>
+                          <th data-width="100" data-align="center" data-field="operate" data-search-formatter="false" data-formatter="operateFormatter" data-events="operateEvents">Action</th>
                       </thead>
                     </table> 
 </body>

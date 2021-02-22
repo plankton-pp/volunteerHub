@@ -126,7 +126,7 @@
            		var form = $("#my-form")[0];
            		var data = new FormData(form);
 
-			if(title!="" && description!="" && target!="" && attendant!="" && due_date!="" && detail!=""  && expenses!="" && advantage!="" && type!="" && img_banner!="" && img!="" && doc!=""){
+			if($("#title").val()!="" && $("#description").val()!="" && $("#target").val()!="" && $("#attendant").val()!="" && $("#due_date").val()!="" && $("#detail").val()!=""  && $("#expenses").val()!="" && $("#advantage").val()!="" && $("#type").val()!="" && $("#img_banner").val()!="" && $("#img").val()!="" && $("#doc").val()!=""){
 				$.ajax({
 					url: 'insert.php',
 					type: 'post',
