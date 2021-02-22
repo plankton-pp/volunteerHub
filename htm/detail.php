@@ -2,20 +2,20 @@
 <html>
 <head>
 	<!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-<<<<<<< Updated upstream
+   
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
     <script type="text/javascript">
     	window.onload = function(){
 			window.scrollTo(30, 1000);
 		}
     </script>
-=======
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
     
->>>>>>> Stashed changes
+
     <style type="text/css">
 
 		* {
@@ -186,7 +186,7 @@ session_start();
     <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                    <div class="modal-header" align="right">
+                    <div class="modal-header" align="center">
                         <h4 class="modal-title" id="myModalLabel">Join Activity</h4>
                        
                         
