@@ -133,6 +133,7 @@
 					data: data,
 					processData: false,
     				contentType: false,
+    				cache: false,
 					success: function(response){
 						console.log(response)
 						//var data = JSON.parse(dataResult);
