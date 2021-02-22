@@ -22,10 +22,9 @@
 	<h1 style="background-color:lightgrey;" align="center">เพิ่มกิจกรรม</h1> 
 
 	<BR>
-	<BR>
 	<Table align="center">
 	
-	<form>
+	<form method='post' action='' enctype="multipart/form-data" id="my-form">
 	<TR>
 		<TD>ชื่อกิจกรรม:</TD>
 		<TD><input type="text" name="title" id="title" maxlength"10"  size="20" placeholder="Title"></TD>
@@ -51,31 +50,37 @@
 	<TR>
 		<TD>วันที่จัดกิจกรรม:</TD>
 		<TD>
-			<input type="datetime-local" name="due_date" id="due_date" maxlength"10" size="20" placeholder="Due date">
+			<input type="datetime-local" name="due_date" id="due_date" placeholder="Due date">
 		</TD>
 	</TR>
 	<TR>
 		<TD>รายละเอียด:</TD>
 		<TD>
-			<input type="text" name="detail" id="detail" maxlength"10" size="20" placeholder="Detail">
+			<textarea name="detail" id="detail"cols="40" rows="4"  size="20" placeholder="detail"></textarea>
 		</TD>
 	</TR>
 	<TR>
 		<TD>ค่าใช้จ่าย:</TD>
 		<TD>
-			<input type="number" name="expenses" id="expenses" maxlength"10" size="20" placeholder="Expenses">
+			<textarea name="expenses" id="expenses"cols="40" rows="4"  size="20" placeholder="detail" ></textarea>
 		</TD>
 	</TR>
 	<TR>
 		<TD>ประโยชน์ที่ได้รับ:</TD>
 		<TD>
-			<input type="text" name="advantage" id="advantage" maxlength"10"  size="20" placeholder="Advantage">
+			<textarea name="advantage" id="advantage"cols="40" rows="4"  size="20" placeholder="advantage"></textarea>
 		</TD>
 	</TR>
 	<TR>
 		<TD>ประเภทของกิจกรรม:</TD>
 		<TD>
-			<input type="text" name="type" id="type" maxlength"10"  size="20" placeholder="Type">
+			<select name="type" id="type" placeholder="Type" >
+			 	<option value="สิ่งแวดล้อม">สิ่งแวดล้อม</option>
+			  	<option value="เด็กและเยาวชน">เด็กและเยาวชน</option>
+			  	<option value="สัตว์">สัตว์</option>
+			  	<option value="ผู้สูงอายุ">ผู้สูงอายุ</option>
+			  	<option value="ผู้พิการและผู้ป่วย">ผู้พิการและผู้ป่วย</option>
+			</select>
 		</TD>
 	</TR>
 	<TR>
@@ -92,75 +97,63 @@
 			<input type = "file" accept="image/*" name = "img" id="img" required>
 		</TD>
 	</TR>
+	<TR>
+		<TD>อัพโหลดเอกสารขออนุญาติจัดกิจกรรม:</TD>
+		<TD>
+			<!--<input type="text" name="img" id="img" maxlength"10"  size="20" placeholder="Image">-->
+			<input type = "file" accept="application/pdf" name = "doc" id="doc" required>
+		</TD>
+	</TR>
+	<TR>
+	 	<TD></TD><TD><BR>
+	 	<input type="submit" name="Save" value="Save" id="butsave">
+	 	<input type="reset" name="Cancel" value="Cancel">
+	 </TD>
+	</TR>
+
 	</form>
 
 
 	 
 	 	
-	 <TR>
-	 	<TD></TD><TD><BR>
-	 	<input type="submit" name="Save" value="Save" id="butsave">
-	 	<input type="reset" name="Cancel" value="Cancel">
-	 </TD></TR>
+	 
 	</Table>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
 	$(document).ready(function() {
 		$('#butsave').on('click', function() {
-			$("#butsave").attr("enable", "enable");
-			var title = $('#title').val();
-			var description = $('#description').val();
-			var target = $('#target').val();
-			var attendant = $('#attendant').val();
-			var due_date = $('#due_date').val();
-			var detail = $('#detail').val();
-			var expenses = $('#expenses').val();
-			var advantage = $('#advantage').val();
-			var type = $('#type').val();
-			var img_banner = $('#img_banner').val();
-			var img = $('#img').val();
+				event.preventDefault();
+           		var form = $("#my-form")[0];
+           		var data = new FormData(form);
 
-			if(title!="" && description!="" && target!="" && attendant!="" && due_date!="" && detail!=""  && expenses!="" && advantage!="" && type!="" && img_banner!="" && img!=""){
+			if(title!="" && description!="" && target!="" && attendant!="" && due_date!="" && detail!=""  && expenses!="" && advantage!="" && type!="" && img_banner!="" && img!="" && doc!=""){
 				$.ajax({
-					url: "insert.php",
-					type: "POST",
-					data: {
-						title: title,
-						description: description,
-						target: target,
-						attendant: attendant,
-						due_date: due_date,
-						detail: detail,
-						expenses: expenses,
-						advantage: advantage,
-						type: type,
-						img_banner: img_banner,
-						img: img,
-										
-					},
-					cache: false,
-					success: function(dataResult){
+					url: 'insert.php',
+					type: 'post',
+					data: data,
+					processData: false,
+    				contentType: false,
+					success: function(response){
+						console.log(response)
 						//var data = JSON.parse(dataResult);
 						Swal.fire(
 						  'saved',
 						  'Your event has been saved!',
 						  'success'
-						)
-						
-					}
-				});
-			}
-			else{
-				Swal.fire({
-				  icon: 'error',
-				  title: 'Something went wrong !',
-				  text: 'Please fill all the field !'
-				}).then(function(){ 
-   					//window.location = "insertForm.htm";
-   					});
-			}
+						)	
+					}				
+				});	
+				}else{
+					Swal.fire({
+					  icon: 'error',
+					  title: 'Something went wrong !',
+					  text: 'Please fill all the field !'
+					}).then(function(){ 
+	   					//window.location = "insertForm.htm";
+	   					});
+				}
+			});
 		});
-});
 </script>
 </body>
 </html>
