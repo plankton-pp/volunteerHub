@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <?php include'navbar.php';?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -17,9 +18,17 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css">
     <!-------------------------------------------------------------------------------------------------------------------------------------->
 
+    <style type="text/css">
+      body {
+        font-family: 'Kanit', sans-serif;
+        background-color: aliceblue
+    }
+
+    </style>
+
 
     <title>Admin</title>
-    <?php include'navbar.php';?>
+    
   </head>
   <body>
 
@@ -44,7 +53,7 @@
 	      <th data-width="100" data-field="advantage">ประโยชน์ที่ได้รับ</th>
 	      <th data-width="100" data-field="type">ประเภทกิจกรรม</th>
 	      <th data-width="100" data-field="img_banner" data-formatter="formatPic">ภาพปก</th>
-	      <th data-width="100" data-field="img">ภาพอื่น ๆ</th>
+	      <th data-width="100" data-field="img" data-formatter="formatPic2">ภาพอื่น ๆ</th>
         <th data-width="100" data-align="center" data-field="operate" data-search-formatter="false" data-formatter="operateFormatter" data-events="operateEvents">Action</th>
 	    </tr>
 	  </thead>
@@ -190,14 +199,23 @@
 
     	function operateFormatter(value, row, index) {
           return [ 
-                '<a class="edit" href="javascript:void(0)" title="Edit"><i style="font-size: 22px; color: #ffc107;" class="fas fa-edit"></i></a>' + '\xa0\xa0\xa0\xa0\xa0',
-               '<a class="remove" href="javascript:void(0)" title="Remove"><i style="font-size: 25px; color: #dc3545;" class="fas fa-trash"></i></a>'
+                '<a class="edit" href="javascript:void(0)" title="Edit"><i style="font-size: 20px; color: #ffc107;" class="fas fa-edit"></i></a>' + '\xa0',
+               '<a class="remove" href="javascript:void(0)" title="Remove"><i style="font-size: 20px; color: #dc3545;" class="fas fa-trash"></i></a>'
 
             ].join('')
        }
 
        function formatPic(value, row, index) {
+<<<<<<< Updated upstream
          return "<img width='150px'src=upload/img_banner/"+ row.img_banner +">"
+=======
+         return "<img width='150' src=upload/img_banner/"+ row.img_banner +">"
+         return "<img width='150' src=upload/img/"+ row.img +">"
+       }
+
+       function formatPic2(value, row, index) {
+         return "<img width='150' src=upload/img/"+ row.img +">"
+>>>>>>> Stashed changes
        }
 
   

@@ -1,5 +1,6 @@
 <html>
 <head>
+	<?php include'navbar.php';?>
 	<link rel="shortcut icon" href="../img/volunteer.ico" />
 	<title>VolunteerHub</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -15,7 +16,6 @@
           background-size: 100% 100%;
    }
 	</style>
-	<?php include'navbar.php';?>
 </head>
 <body>
 	

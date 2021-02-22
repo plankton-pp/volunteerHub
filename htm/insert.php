@@ -31,8 +31,8 @@
 
 	// Location
 	//$target_docPath = "upload/document";
-	$target_imgPath = "upload/img/";
 	$target_bannerPath = "upload/img_banner/";
+	$target_imgPath = "upload/img/";
 	$target_docPath = "upload/doc/";
 
 	$location = $banner;
@@ -55,14 +55,14 @@
 		$new_name2 = $id.rand() . '.'. $img;
 		$new_name3 = $id.rand() . '.'. $doc;  
   	// Upload file
-  	if(move_uploaded_file($_FILES['img']['tmp_name'],$target_imgPath.$new_name ) && move_uploaded_file($_FILES['img_banner']['tmp_name'],$target_bannerPath.$new_name2)&& move_uploaded_file($_FILES['doc']['tmp_name'],$target_docPath.$new_name3)){
+  	if(move_uploaded_file($_FILES['img_banner']['tmp_name'],$target_bannerPath.$new_name) && move_uploaded_file($_FILES['img']['tmp_name'],$target_imgPath.$new_name2 )&& move_uploaded_file($_FILES['doc']['tmp_name'],$target_docPath.$new_name3)){
     	$response = $target_imgPath;
   	}
 
 
 
 	$sql="insert into volunteer(title, description, attendants_target, attendants, due_date, detail, expenses, advantage, type, img_banner, img, doc, status)
- 		values('$title','$des','$target','$atten', '$due', '$datail', '$expen', '$advan', '$type', '$new_name2', '$new_name', '$new_name3','')";
+ 		values('$title','$des','$target','$atten', '$due', '$datail', '$expen', '$advan', '$type', '$new_name', '$new_name2', '$new_name3','')";
 
  	if (mysqli_query($conn, $sql)) {
 		echo "success";
