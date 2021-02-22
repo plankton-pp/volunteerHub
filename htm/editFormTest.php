@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
 <head>
            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
@@ -23,6 +24,22 @@
     //echo "error check id=".$result['ID'];
   
   }
+  $conn_user=mysqli_connect("localhost", "root", "","volunteerhub");
+  $conn_user->query("SET NAMES UTF8"); 
+
+  $sql_user = "SELECT * FROM register WHERE id = '".$_SESSION['id']."' ";
+  $query_user= mysqli_query($conn_user,$sql_user);
+  
+  $result_user = mysqli_fetch_array($query_user);
+
+  if(!$result_user){
+    echo "Not found ID=".$_SESSION['id'];
+  }else
+  {
+    //echo "error check id=".$result['ID'];
+  
+  }
+  ?>
   ?>
  <br/>  
            <div class="container">  
@@ -47,8 +64,8 @@
                             </div>
                             <div class="modal-body">
                             <form method='post' action='' enctype="multipart/form-data" id="my-form">
-                                <label for="userid">userid</label>
-                                <input type="text" name="userid" size="20" value="Pacharapol" class='form-control'/><br>
+                                <label for="userid">User Name</label>
+                                <input type="text" name="userid" size="20" value="<?php echo $result_user['username'];?>" class='form-control'/><br>
 
 
                                 <label for="file">img</label>
