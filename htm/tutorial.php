@@ -5,7 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Tutorial</title>
+	<!-------navbar--------->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!---------------->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -36,9 +38,22 @@
 	</style>
 </head>	
 <body>
-	<!-- menu-->
+	<?php
+    echo "<script type=\"text/javascript\">
+                  if(sessionStorage.getItem('loggedin')==null){
+                    document.getElementById(\"insertForm\").innerHTML = \"<p></p>\";
+                    document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
+                    document.getElementById(\"view\").innerHTML = \"<p></p>\";
+                    document.getElementById(\"logoutbutton\").innerHTML = \"<a href='login.php' class='btn btn-primary'>Login</a>\";
+                    
+                  }else if(sessionStorage.getItem('loggedin')=='true'){
+                   
+                  }
+      
 
-
+                </script>
+            ";
+  ?>
 <br>
 <h1>ขั้นตอนการส่งโครงการ</h1>
 

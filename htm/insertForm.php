@@ -1,6 +1,7 @@
 <html>
 <head>
 	<?php include'navbar.php';?>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="shortcut icon" href="../img/volunteer.ico" />
 	<title>VolunteerHub</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">

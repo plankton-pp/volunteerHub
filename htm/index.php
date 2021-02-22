@@ -204,10 +204,12 @@ function logout(){
 				echo '<div id="buttonset'.$row["id"].'">';
 				echo "<script type=\"text/javascript\">
 		            	if(sessionStorage.getItem('loggedin')==null){
-		            		document.getElementById(\"logoutbutton\").innerHTML = \"<a href='login.php' class='btn btn-primary'>Login</a>\";
+		            		
 		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<button class='btn btn-primary'id='btn-join' onclick='say()'>Join</button>\";
+		            		document.getElementById(\"logoutbutton\").innerHTML = \"<a href='login.php' class='btn btn-primary'>Login</a>\";
 		            		document.getElementById(\"insertForm\").innerHTML = \"<p></p>\";
 		            		document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
+		            		document.getElementById(\"view\").innerHTML = \"<p></p>\";
 		            	}else if(sessionStorage.getItem('loggedin')=='true'){
 		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<a href='detail.php?index=".$row['title']."' class='btn btn-primary'id='btn-join'>Join</a>\";
 		            	}
