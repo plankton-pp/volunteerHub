@@ -43,7 +43,7 @@
 	      <th data-width="100" data-field="expenses">ค่าใช้จ่าย</th>
 	      <th data-width="100" data-field="advantage">ประโยชน์ที่ได้รับ</th>
 	      <th data-width="100" data-field="type">ประเภทกิจกรรม</th>
-	      <th data-width="100" data-field="img_banner">ภาพปก</th>
+	      <th data-width="100" data-field="img_banner" data-formatter="formatPic">ภาพปก</th>
 	      <th data-width="100" data-field="img">ภาพอื่น ๆ</th>
         <th data-width="100" data-align="center" data-field="operate" data-search-formatter="false" data-formatter="operateFormatter" data-events="operateEvents">Action</th>
 	    </tr>
@@ -195,6 +195,12 @@
 
             ].join('')
        }
+
+       function formatPic(value, row, index) {
+         return "<img src=upload/img_banner/"+ row.img_banner +">"
+       }
+
+  
 
        window.operateEvents = {
        		'click .edit': function (e, value, row, index) {
