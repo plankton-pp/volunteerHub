@@ -57,46 +57,56 @@
            </div>  
            <br />   
  <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                &nbsp;
-                                <h4 class="modal-title" id="myModalLabel">Load Secure Document</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                            <form method='post' action='' enctype="multipart/form-data" id="my-form">
-                                <!--User Information-->
-                                <h4><b>User Information</b></h4>
-                                    <!--Username-->
-                                    <label for="userid">User Name</label>
-                                    <input type="text" name="userid" size="20" value="<?php echo $result_user['username'];?>" class='form-control'/><br>
-                                <hr/>
-                                <!--Detail Information-->
-                                    <label for="userid">Title</label>
-                                    <textarea name="title" cols="40" rows="5"  size="20" placeholder="Title" required><?php echo $result['title'];?></textarea>
-                                <hr/>
-                                <!--Image-->
-                                <label for="file">Image</label>
-                                <input type='file' name='img' id='img' value="" class='form-control' ><br>
-                                <!--banner-->
-                                <label for="file">Project Banner</label>
-                                <input type='file' name='img_banner' id='img_banner' class='form-control' ><br>
+   <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        &nbsp;
+          <h4 class="modal-title" id="myModalLabel">Load Secure Document</h4>
+           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+           </div>
+              <div class="modal-body">
+              <form method='post' action='' enctype="multipart/form-data" id="my-form">
+                  <!--User Information-->
+                  <h4><b>User Information</b></h4>
+                  <!--Username-->
+                    <label for="userid">User Name</label>
+                    <input type="text" name="userid" size="20" value="<?php echo $result_user['username'];?>" class='form-control'readonly/><br>
+                  <hr/>
 
-                                <input type='button' class='btn btn-info' value='Upload' id='upload'>
-                            </form>
+                  <!--Detail Information-->
+                  <h4><b>Detail Information</b></h4>
+                  <!--Title-->
+                    <label for="userid">Title</label><br/>
+                    <input type="text" name="title" size="20" value="<?php echo $result['title'];?>" class='form-control'required/><br>
+                  <!--Description-->
+                    <label for="description">Description</label><br/>
+                    <textarea name="description" class="form-control" cols="40" rows="10"  size="20" placeholder="Description" required><?php echo $result['description'];?></textarea>
+                    
+                    <hr/>
 
-                            <!-- Preview-->
-                            <div id='preview'></div>
-                            </div>
-                            <div class="modal-body3">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
+                  <!--Image-->
+                  <label for="file">Image</label>
+                  <input type='file' name='img' id='img' value="" class='form-control' ><br>
+                  <!--banner-->
+                  <label for="file">Project Banner</label>
+                  <input type='file' name='img_banner' id='img_banner' class='form-control' ><br>
+
+                  <input type='button' class='btn btn-info' value='Upload' id='upload'>
+              </form>
+
+                <!-- Preview-->
+              <div id='preview'></div>
+              </div>
+
+              <div class="modal-body3">
+              </div>
+
+              <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+      </div>
+   </div>
+</div> 
  <script>  
 $(document).ready(function(){
   $('#upload').click(function(){
