@@ -1,77 +1,49 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bootstrap 4 Linked List Group with Custom Content</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<style>
-    .bs-example{
-        margin-top: : 400px;    
-        margin-left: 100px;
-        margin-right: 100px;    
-    }
-    h1{
-       margin-bottom: 35px;  
-        margin-left: 100px;
-        margin-right: 100px;    
-    }
-</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Tutorial</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style>
+	    .bs-example{
+	        margin-top: : 400px;    
+	        margin-left: 100px;
+	        margin-right: 100px;    
+	    }
+	    h1{
+	       margin-bottom: 35px;  
+	        margin-left: 100px;
+	        margin-right: 100px;    
+	    }
+	    #profile{
+		width: 150px;
+		height: 36px;
+		border-radius: 50px;
+		color: white;
+		background-color:#555555 ;
+		border:0px;
+		opacity: 0.8;
+	}
+#profile:hover {
+	  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+	}
+	</style>
 </head>	
 <body>
 	<!-- menu-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	  <div class="container-fluid">
-	    <a class="navbar-brand" href="#">VolunteerHub</a>
-	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
-	    </button>
-	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	        <li class="nav-item">
-	          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="insertForm.htm">InsertForm</a>
-	        </li>
-	   
-	        <li class="nav-item">
-	          <a class="nav-link" href="view.php">view</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="editForm.php">EditForm</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="docForm.php">docForm</a>
-	        </li>
-	       <li class="nav-item">
-	          <a class="nav-link" href="viewdoc.php">viewdoc</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link"  href="downloaddoc.php?nama=doc.pdf" >Dowload</a>
-	        </li>
-	      </ul>
-	      <div class="d-flex">
-	      	<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	      		<div class="nav-link" ><li class="nav-item" ><a href="profile.php"><button id="profile">Profile</button></a></li></div>
-	      		<div class="nav-link" ><li class="nav-item" id="logoutbutton"><a href="logout.php" style="color: white;" class="btn btn-danger">Logout</a></li></div>
 
-	      	</ul>
-	      </div>
-	    </div>
-	  </div>
-	</nav>
 
 <br>
 <h1>ขั้นตอนการส่งโครงการ</h1>
 
 <div class="bs-example">    
     <div class="list-group">
-        <a href="register.php" class="list-group-item list-group-item-action">
+        <a href="index.php" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
                 <h4>สมัครสมาชิก และ/หรือ เข้าสู่ระบบ</h4>
               
@@ -80,7 +52,8 @@
         </a>
         <a href="doc.pdf" class="list-group-item list-group-item-action ">
             <div class="d-flex w-100 justify-content-between">
-                <h4>กรอกข้อมูลโครงการลงในไฟล์ ดาวน์โหลดไฟล์กรอกข้อมูลโครงการ Click to Download</h4>
+                <h4>กรอกข้อมูลโครงการลงในไฟล์ ดาวน์โหลดไฟล์กรอกข้อมูลโครงการ <h5>Click to Download</h5></h4>
+                
                 
                 
             </div>
@@ -88,7 +61,7 @@
         </a>
         <a href="InsertForm.htm" class="list-group-item list-group-item-action" target="_blank">
             <div class="d-flex w-100 justify-content-between">
-                <h4>ส่งข้อมูลมาให้เรา Click</h4>
+                <h4>ส่งข้อมูลมาให้เรา <h5>Click Here</h5></h4>
                 
             </div>
           
