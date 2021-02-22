@@ -1,0 +1,71 @@
+
+body {
+    background: #e8cbc0;
+    background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
+    background: linear-gradient(to right, #e8cbc0, #636fa4);
+    min-height: 100vh;
+}
+
+body {
+    background-color: #f9f9fa
+}
+
+.padding {
+    padding: 10rem !important
+}
+
+
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: none;
+    margin-bottom: 0px
+}
+
+
+.user-card-full .user-profile {
+    border-radius: 5px 5px 5px 5px
+}
+
+.bg-c-lite-green {
+    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+    background: linear-gradient(to right, #ee5a6f, #f29263)
+}
+
+
+
+.card-block {
+    padding: 1rem
+}
+    
+.m-b-25 {
+   margin-bottom: 200px;
+    margin-top: 150px;
+
+}
+
+
+h6 {
+    font-size: 15px
+}
+
+.card .card-block p {
+    line-height: 50px
+}
+
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.f-w-600 {
+    font-weight: 700
+}
+
+
+
+
+
+

@@ -49,7 +49,7 @@ session_start();
 	          <a class="nav-link" href="viewdoc.php">viewdoc</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link"  href="downloaddoc.php?nama=doc.pdf" >Dowload</a>
+	          <a class="nav-link"  href="tutorial.php" >Tutorial</a>
 	        </li>
 	      </ul>
 	      <div class="d-flex">
