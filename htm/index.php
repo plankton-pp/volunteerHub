@@ -112,9 +112,14 @@ body { font-family: sans-serif; }
 	  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
 	}
 </style>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">
-		function say(str){
-  alert("login first");
+	function say(str){
+		Swal.fire({
+					  icon: 'error',
+					  title: 'คุณยังไม่ได้ Login',
+					  text: 'กรุณา Login เพิ้อเข้าใช้งาน!'
+					})
 }
 	function saynothing(id, title){
 		document.getElementById("foreground"+id.toString()).innerHTML="<div><p></p></div>";
