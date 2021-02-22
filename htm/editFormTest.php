@@ -64,14 +64,16 @@
                             </div>
                             <div class="modal-body">
                             <form method='post' action='' enctype="multipart/form-data" id="my-form">
+                                <!--User Information-->
+                                <!--Username-->
                                 <label for="userid">User Name</label>
                                 <input type="text" name="userid" size="20" value="<?php echo $result_user['username'];?>" class='form-control'/><br>
 
-
-                                <label for="file">img</label>
+                                <!--Image-->
+                                <label for="file">Image</label>
                                 <input type='file' name='img' id='img' value="" class='form-control' ><br>
-
-                                <label for="file">banner</label>
+                                <!--banner-->
+                                <label for="file">Project Banner</label>
                                 <input type='file' name='img_banner' id='img_banner' class='form-control' ><br>
 
                                 <input type='button' class='btn btn-info' value='Upload' id='upload'>
