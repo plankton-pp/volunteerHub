@@ -3,12 +3,19 @@
 <head>
 	<!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
     <script type="text/javascript">
     	window.onload = function(){
 			window.scrollTo(30, 1000);
 		}
     </script>
+=======
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+    
+>>>>>>> Stashed changes
     <style type="text/css">
 
 		* {
@@ -173,8 +180,86 @@ session_start();
 	?>
 				
 	<div class="py-3 pb-4 border-bottom " align="center"> 
-		<button class="btn btn-primary mr-3">Join</button>
+		<button class="btn btn-primary mr-3" id="join" data-toggle="modal" data-target="#myModal1" >Join</button>
 	</div>
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <div class="modal-header" align="right">
+                        <h4 class="modal-title" id="myModalLabel">Join Activity</h4>
+                       
+                        
+                    </div>
+                    <div class="modal-body">
+                        <form method='post' id="my-form" action='' enctype="multipart/form-data" id="my-form">
+                        <input type="hidden" name="id" id="id" size="20"  class='form-control' value="<?php echo $_SESSION['id']; ?>" />
+                        <input type="hidden" name="acid" id="acid" size="20"  class='form-control' value="<?php echo $_SESSION['acid']; ?>" />
+                        <input type="hidden" name="username" id="username" size="20"  class='form-control' value="<?php echo $_SESSION["username"]; ?>" />
+                        <input type="hidden" name="name" id="name" size="20"  class='form-control' value="<?php echo $_SESSION["name"]; ?>" />
+                        <input type="hidden" name="email" id="email" size="20"  class='form-control' value="<?php echo $_SESSION["email"]; ?>" />
+                        <input type="hidden" name="phone" id="phone" size="20"  class='form-control' value="<?php echo $_SESSION["phone"]; ?>" />
+
+
+                        <div align="center">
+                            <input type='button' aling = 'right' class='btn btn-info' value='join' id='joinac'>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancle</button>
+                        </div>
+                        </form>                           
+                    </div>                    
+            </div>
+        </div>
+    </div> 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ <script>  
+$(document).ready(function(){
+    $('#joinac').click(function(){
+            if($('#id').val().length == 0 
+                || $('#acid').val().length == 0 
+                || $('#username').val().length == 0 
+                || $('#name').val().length == 0
+                || $('#email').val().length == 0 
+                || $('#phone').val().length == 0){
+            Swal.fire({
+
+                              icon: 'error',
+                              title: 'Something went wrong!',
+                              text: 'Please fill all the field !'
+                            })
+                }else{
+                         event.preventDefault();
+                         var form = $("#my-form")[0];
+                         var data = new FormData(form);
+                          console.log(data);
+                        // AJAX request
+                        $.ajax({
+                          url: 'join.php',
+                          type: 'post',
+                          data: data,
+                          contentType: false,
+                          processData: false,
+                          success: function(response){
+                            console.log(response);
+                            if(response != 0){
+                              // Show image preview
+                              Swal.fire({
+                                     icon: 'success',
+                                     title: 'Your event has been saved!',
+                                     text: 'success',
+                                     
+
+                              })  
+                              $('#myModal1').modal('hide'); 
+                            }
+                          },
+                          error: function(error){
+                            console.log(error);
+                          }
+                        });
+                }    
+          });  
+});
+ </script>  
 </body>
 
 </html>

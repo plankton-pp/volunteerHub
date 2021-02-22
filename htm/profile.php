@@ -120,13 +120,11 @@ include'navbar.php';
                             
                         </div>
                     </div>
-  </div> 
+  		</div> 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
  <script>  
 $(document).ready(function(){
-
-		
-		$('#save').click(function(){
+	$('#save').click(function(){
 			if($('#username').val().length == 0 
 				|| $('#name').val().length == 0 
 				|| $('#email').val().length == 0 
@@ -171,10 +169,7 @@ $(document).ready(function(){
 					        console.log(error);
 					      }
 					    });
-
-		        }
-		    
-
+		        }    
 		  });  
 });
  </script>  
