@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php session_start(); 
-  include 'navbar.php';
+  include 'navbar2.php';
 ?>
 <html>
 <head>
@@ -60,7 +60,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                              &nbsp;
+                                &nbsp;
                                 <h4 class="modal-title" id="myModalLabel">Load Secure Document</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             </div>
