@@ -64,7 +64,7 @@ session_start();
 	</nav>
 
 </head>
-<body>
+<body class="body">
 <style>
 	.hide-text {
     	visibility: hidden;
@@ -85,7 +85,7 @@ body { font-family: sans-serif; }
 
 .gallery-cell {
   width: 66%;
-  height: 300px;
+  height: 450px;
   margin-right: 30px;
   counter-increment: gallery-cell;
 }
@@ -156,10 +156,10 @@ function logout(){
 			$mod=1;
 			if($row = $rs->fetch_assoc()){
 				while($row = $rs->fetch_assoc()) {
-				if($mod%3==1){
+				if($mod%4==1){
 					echo "<tr>";
 				}
-				echo	"<td style=\"padding-left: 15px;\">";
+				echo	"<td style=\"padding-left: 25px;\">";
 				echo		"<div class=\"card\">";
 				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../htm/upload/img_banner/'.$row['img_banner'].'" style="width:100%"/></a>';
 				echo		  "<div class=\"card-body\">";
@@ -196,7 +196,7 @@ function logout(){
 				echo		  "</div>";
 				echo		"</div>";
 				echo	"</td>";
-				if($mod%3==0){
+				if($mod%4==0){
 					echo	"</tr>";
 				}
 				$mod++;
