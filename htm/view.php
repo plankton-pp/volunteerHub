@@ -206,16 +206,12 @@
        }
 
        function formatPic(value, row, index) {
-<<<<<<< Updated upstream
+
          return "<img width='150px'src=upload/img_banner/"+ row.img_banner +">"
-=======
-         return "<img width='150' src=upload/img_banner/"+ row.img_banner +">"
-         return "<img width='150' src=upload/img/"+ row.img +">"
-       }
+
 
        function formatPic2(value, row, index) {
          return "<img width='150' src=upload/img/"+ row.img +">"
->>>>>>> Stashed changes
        }
 
   
