@@ -53,3 +53,21 @@ function callResult() {
   }
   xmlHttp.send(null);
 }
+function searchName(str) {
+  createXMLHttpRequest();
+  var url = "searchName.php";
+  url = url + "?name=" + str;
+  xmlHttp.open("GET", url, true);
+  xmlHttp.onreadystatechange = () => {
+    var result = "";
+    if (xmlHttp.readyState == 4) {
+      let res = xmlHttp.responseText.split(',');
+      for(suggest in res){
+        result += "<option value="+res[suggest]+">" + res[suggest]+"</option>";
+      }
+      document.getElementById("namesugg").innerHTML = result;
+      //alert(result);
+    }
+  };
+  xmlHttp.send(null);
+}

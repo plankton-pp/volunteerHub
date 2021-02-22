@@ -51,11 +51,20 @@ session_start();
 	        <li class="nav-item">
 	          <a class="nav-link"  href="tutorial.php" >Tutorial</a>
 	        </li>
+	        <li class="nav-item">
+		        	<form method="get" class="nav-link">
+						<input class="nav-item" list="namesugg" name="search" onkeyup="searchName(this.value)">
+						<datalist id="namesugg">
+						</datalist>
+						<input class="nav-item" type="submit" value="search">
+					</form>
+		        </li>
 	      </ul>
 	      <div class="d-flex">
 	      	<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	      		<div class="nav-link" ><li class="nav-item" ><a href="profile.php"><button id="profile">Profile</button></a></li></div>
-	      		<div class="nav-link" ><li class="nav-item" id="logoutbutton"><a href="logout.php" style="color: white;" class="btn btn-danger">Logout</a></li></div>
+	      		<li class="nav-item" ><div class="nav-link" ><a href="profile.php"><button id="profile">Profile</button></a></li></div>
+	      		<div class="nav-link" ><li class="nav-item" id="logoutbutton"><a href="logout.php" style="color: white;" class="btn btn-danger">Logout</a></div></li>
+
 
 	      	</ul>
 	      </div>
@@ -156,7 +165,12 @@ function logout(){
 			// connect to the database
 			$conn=mysqli_connect("localhost", "root", "","volunteerhub");
 			$conn->query("SET NAMES UTF8");
-			$sql="SELECT * FROM volunteer WHERE status LIKE'pass'";
+			if(isset($_GET['search'])&&$_GET['search']<>""){
+				$search = $_GET['search'];
+				$sql="SELECT * FROM volunteer WHERE  title LIKE '%$search%'";
+			}else{
+				$sql="SELECT * FROM volunteer WHERE status ='pass'";
+			}
 			$rs=$conn->query($sql);
 			$mod=1;
 			if($row = $rs->fetch_assoc()){
