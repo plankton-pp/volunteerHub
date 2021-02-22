@@ -170,7 +170,7 @@ function logout(){
 			$conn->query("SET NAMES UTF8");
 			if(isset($_GET['search'])&&$_GET['search']<>""){
 				$search = $_GET['search'];
-				$sql="SELECT * FROM volunteer WHERE  title LIKE '%$search%'";
+				$sql="SELECT * FROM volunteer WHERE title LIKE '%$search%' AND status ='pass'";
 			}else{
 				$sql="SELECT * FROM volunteer WHERE status ='pass'";
 			}
