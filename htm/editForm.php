@@ -9,7 +9,7 @@
 	$conn=mysqli_connect("localhost", "root", "","volunteerhub");
 	$conn->query("SET NAMES UTF8");	
 
-	$sql = "SELECT * FROM volunteer WHERE id = '".$_SESSION['id']."' ";
+	$sql = "SELECT * FROM volunteer WHERE id = '".$_GET['id']."' ";
 	$query= mysqli_query($conn,$sql);
 	
 	$result = mysqli_fetch_array($query);

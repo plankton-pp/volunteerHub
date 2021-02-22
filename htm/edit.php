@@ -12,8 +12,8 @@ $conn->query("SET NAMES UTF8");
 	$id = $_SESSION['ID'];
 	$title = $_POST["title"];
 	$des = $_POST["description"];
-	$target = $_POST["target"];
-	$atten = $_POST["attendant"];
+	$target = $_POST["attendants_target"];
+	$atten = $_POST["attendants"];
 	$due = $_POST["due_date"];
 	$datail = $_POST["detail"];
 	$expen = $_POST["expenses"];
@@ -41,14 +41,7 @@ $conn->query("SET NAMES UTF8");
 	//echo "<br>".$sql; //print out for debugging
 
 	if ($conn->query($sql)) {
-	echo "<script type='text/javascript'>alert('UPDATE Successfully!');</script>";
-	echo '<td><br><a href="view.php">Go to Home</a> ';
-	} else {
-	//echo "<br>"; //print out for debugging
-	$message = "Execution Error!"."<br>".$title." ".$des." ".$target." ".$atten." ".$due." ".$datail." ".$expen." ".$expen." ".$advan." ".$type." ".$banner." ".$img;
-	echo $message;
-	echo '<td><br><a href="editForm.php?id='.$id.'">Back</a> ';
-	echo $title." ".$des." ".$target." ".$atten." ".$due." ".$datail." ".$expen." ".$expen." ".$advan." ".$type." ".$banner." ".$img;
+
 	}
 	$conn->close();
 	echo "<script>window.location.href = \"../htm/index.php\";</script>";
