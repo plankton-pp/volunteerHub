@@ -43,6 +43,11 @@
   
   $result = mysqli_fetch_array($query);
 
+
+  $_SESSION['img_banner'] = $result['img_banner'];
+  $_SESSION['img'] = $result['img'];
+  $_SESSION['doc'] = $result['doc'];
+
   if(!$result){
     echo "Not found ID=".$_SESSION['id'];
   }else
@@ -212,7 +217,7 @@
                             var form = $("#my-form")[0];
                             var data = new FormData(form);
 
-                    if($("#title").val()!="" && $("#description").val()!="" && $("#target").val()!="" && $("#attendant").val()!="" && $("#due_date").val()!="" && $("#detail").val()!=""  && $("#expenses").val()!="" && $("#advantage").val()!="" && $("#type").val()!="" && $("#img_banner").val()!="" && $("#img").val()!="" && $("#doc").val()!=""){
+                    if($("#title").val()!="" && $("#description").val()!="" && $("#target").val()!="" && $("#attendant").val()!="" && $("#due_date").val()!="" && $("#detail").val()!=""  && $("#expenses").val()!="" && $("#advantage").val()!="" && $("#type").val()!=""){
                       $.ajax({
                         url: 'editForm.php',
                         type: 'post',
