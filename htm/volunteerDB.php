@@ -22,7 +22,7 @@ session_start();
 				echo		"<div class=\"card\">";
 				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../htm/upload/img_banner/'.$row['img_banner'].'" style="width:100%; height:150px;"height:150px;/></a>';
 				echo		  "<div class=\"card-body\">";
-				echo		   '<a href="detail.php?index='.$row['title'].'" id="card-title"><b>'.$row['title'].'</b></a>';
+				echo		   '<a href="detail.php?index='.$row['title'].'&id_index='.$row['id'].'" id="card-title"><b>'.$row['title'].'</b></a>';
 				echo		    "<p class=\"card-text\">";
 				echo		    	$row['description'];
 				echo			"</p>";
