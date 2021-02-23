@@ -213,7 +213,7 @@
                           <label for="userid">สถานะ</label>
                       </td>
                       <td class="user_col">
-                        <input type="text" name="id" size="20" value="<?php echo $result['status'];?>" class='form-control' style="width: 400px;"/ >
+                        <input type="text" name="status" id="status" size="20" value="<?php echo $result['status'];?>" class='form-control' style="width: 400px;"/ >
                         
                       </td>
                     </tr>

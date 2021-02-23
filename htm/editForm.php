@@ -25,6 +25,8 @@
 	$expen = $_POST["expenses"];
 	$advan = $_POST["advantage"];
 	$type = $_POST["type"];
+	$status = $_POST["status"];
+	$username = $_SESSION['username'];
 
 	
 
@@ -102,7 +104,7 @@ $response = 0;
 
 			if(in_array($file_extension,$image_ext)){
 				echo "Hello Mother Fucker";
-				$new_name3  $id. '_'.rand() . '.'. $filename3; 
+				$new_name3 = $id. '_'.rand() . '.'. $filename3; 
 				
 			  // Upload file
 			  if(move_uploaded_file($_FILES['doc']['tmp_name'],$target_docPath.$new_name3)){
@@ -118,7 +120,7 @@ $response = 0;
 
 
 		
-	$sql="UPDATE `volunteer` SET title='$title',description='$des',attendants_target='$target',attendants='$atten',due_date='$due',detail='$detail',expenses='$expen',advantage='$advan',type='$type',img_banner='$new_name',img='$new_name2',doc='$new_name3',status='pass',author= '$username' WHERE id = '$id'";
+	$sql="UPDATE `volunteer` SET title='$title',description='$des',attendants_target='$target',attendants='$atten',due_date='$due',detail='$detail',expenses='$expen',advantage='$advan',type='$type',img_banner='$new_name',img='$new_name2',doc='$new_name3', status = '$status',author= '$username'  WHERE id = '$id'";
 
  	if (mysqli_query($conn, $sql)) {
 		echo "success";
