@@ -29,8 +29,20 @@
           background-color: rgba(86, 86, 86, 0.8)
         }
         </style>
+
+        <script>
+          var ar = '<?php echo $_SESSION["status"]; ?>';
+
+          function myFunction() {
+            if(ar != "admin"){
+              
+              
+              document.getElementById("status").style.display = "none";
+            }
+          }
+          </script>
       </head>  
-      <body> 
+      <body onload="myFunction()"> 
       <div id="subBody" class="col-lg-8">
   <?php 
   $index = $_GET['id'];
@@ -193,6 +205,16 @@
                       <td class="user_col">
                         <input type="text" name="id" size="20" value="<?php echo $result['doc'];?>" class='form-control' style="width: 400px;"/ readonly>
                         <input type = "file" id="doc"accept="application/pdf" name = "doc" id="doc" required>
+                      </td>
+                    </tr>
+                    <tr id="status">
+                      <td class="user_row">
+                         <!--Username-->
+                          <label for="userid">สถานะ</label>
+                      </td>
+                      <td class="user_col">
+                        <input type="text" name="id" size="20" value="<?php echo $result['status'];?>" class='form-control' style="width: 400px;"/ >
+                        
                       </td>
                     </tr>
                   </table>
