@@ -21,7 +21,7 @@
 	$target = $_POST["target"];
 	$atten = $_POST["attendant"];
 	$due = $_POST["due_date"];
-	$datail = $_POST["detail"];
+	$detail = $_POST["detail"];
 	$expen = $_POST["expenses"];
 	$advan = $_POST["advantage"];
 	$type = $_POST["type"];
@@ -62,7 +62,7 @@
 
 
 	$sql="insert into volunteer(title, description, attendants_target, attendants, due_date, detail, expenses, advantage, type, img_banner, img, doc, status)
- 		values('$title','$des','$target','$atten', '$due', '$datail', '$expen', '$advan', '$type', '$new_name', '$new_name2', '$new_name3','')";
+ 		values('$title','$des','$target','$atten', '$due', '$detail', '$expen', '$advan', '$type', '$new_name', '$new_name2', '$new_name3','')";
 
  	if (mysqli_query($conn, $sql)) {
 		echo "success";

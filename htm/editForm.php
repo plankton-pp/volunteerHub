@@ -1,111 +1,77 @@
-<?php session_start();  ?>
-<HTML>
+<html>
+<?php session_start();?>
 <head>
-	<link rel="stylesheet" href="../css/style-insertform.css">
+	<link rel="shortcut icon" href="../img/volunteer.ico" />
+	<title>VolunteerHub</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insertion</title>
 </head>
-<BODY>
-	<?php 
-
+<body>
+	
+<?php
+//print_r($_POST);
+// connect to the database
 	$conn=mysqli_connect("localhost", "root", "","volunteerhub");
-	$conn->query("SET NAMES UTF8");	
+	$conn->query("SET NAMES UTF8");
 
-	$sql = "SELECT * FROM volunteer WHERE id = '".$_SESSION['id']."' ";
-	$query= mysqli_query($conn,$sql);
-	
-	$result = mysqli_fetch_array($query);
+	$id = $_SESSION["edit_index"];
 
-	if(!$result){
-		echo "Not found ID=".$_SESSION['id'];
-	}else
-	{
-		//echo "error check id=".$result['ID'];
+	$title = $_POST["title"];
+	$des = $_POST["description"];
+	$target = $_POST["attendants_target"];
+	$atten = $_POST["attendants"];
+	$due = $_POST["due_date"];
+	$detail = $_POST["detail"];
+	$expen = $_POST["expenses"];
+	$advan = $_POST["advantage"];
+	$type = $_POST["type"];
+	$banner = $_FILES['img_banner']['name'];
+	$img = $_FILES['img']['name'];
+	$doc = $_FILES['doc']['name'];
+
+	// Location
+	//$target_docPath = "upload/document";
+	$target_bannerPath = "upload/img_banner/";
+	$target_imgPath = "upload/img/";
+	$target_docPath = "upload/doc/";
+
+	$location = $banner;
+	$location2 = $img;
+	$location3 = $doc;
+	$username = $_SESSION['username'];
+
+	// file extension
+	$file_extension = pathinfo($location, PATHINFO_EXTENSION);
+	$file_extension = strtolower($file_extension);
+
+	$file_extension2 = pathinfo($location2, PATHINFO_EXTENSION);
+	$file_extension2 = strtolower($file_extension2);
+
+	$file_extension3 = pathinfo($location3, PATHINFO_EXTENSION);
+	$file_extension3 = strtolower($file_extension3);
+
+	$response = 0;
 	
+		$new_name = $id.rand() . '_'. $banner;
+		$new_name2 = $id.rand() . '_'. $img;
+		$new_name3 = $id.rand() . '_'. $doc;  
+  	// Upload file
+  	if(move_uploaded_file($_FILES['img_banner']['tmp_name'],$target_bannerPath.$new_name) && move_uploaded_file($_FILES['img']['tmp_name'],$target_imgPath.$new_name2 )&& move_uploaded_file($_FILES['doc']['tmp_name'],$target_docPath.$new_name3)){
+    	$response = $target_imgPath;
+  	}
+
+
+
+	$sql="UPDATE `volunteer` SET title='$title',description='$des',attendants_target='$target',attendants='$atten',due_date='$due',detail='$detail',expenses='$expen',advantage='$advan',type='$type',img_banner='$new_name',img='$new_name2',doc='$new_name3',status='pass',author= '$username' WHERE id = '$id'";
+
+ 	if (mysqli_query($conn, $sql)) {
+		echo "success";
+	} 
+	else {
+		echo "editForm_error!!!!";
 	}
-	?>
+	mysqli_close($conn);	
+?>
 
-	<center>
-		<table>
-			<form action="edit.php" method="POST">
-			<TR>
-				<TD>Title:</TD>
-				<TD>
-					<textarea name="title" cols="40" rows="5"  size="20" placeholder="Title" required><?php echo $result['title'];?></textarea>
-				</TD>
-			</TR>
-			<TR>
-				<TD>Description:</TD>
-				<TD>
-					<textarea name="description" cols="40" rows="10"  size="20" placeholder="Description" required><?php echo $result['description'];?></textarea>
-				</TD>
-			</TR>
-			<TR>
-				<TD>Attendants_target	:</TD>
-				<TD>
-					<input type="number" name="target" maxlength"10" size="20" placeholder="Target" value="<?php echo $result['attendants_target'];?>" required>
-				</TD>
-			</TR>
-			<TR>
-				<TD>Attendants	:</TD>
-				<TD>
-					<input type="number" name="attendant" maxlength"10" size="20" placeholder="Attendant"  value="<?php echo $result['attendants'];?>" required>
-				</TD>
-			</TR>
-			<TR>
-				<TD>due_date	:</TD>
-				<TD>
-					<input type="text" name="due_date" maxlength"10" size="20" value="<?php echo $result['due_date'];?>" required>
-				</TD>
-			</TR>
-			<TR>
-				<TD>detail	:</TD>
-				<TD>
-					<textarea name="detail" cols="40" rows="15"  size="20" placeholder="Detail" required><?php echo $result['detail'];?></textarea>
-				</TD>
-			</TR>
-			<TR>
-
-				<TD>expenses	:</TD>
-				<TD>
-					<textarea name="expenses" cols="40" rows="20"  size="20" placeholder="Expenses" required><?php echo $result['expenses'];?></textarea>
-				</TD>
-			</TR>
-			<TR>
-				<TD>advantage	:</TD>
-				<TD>
-					<textarea name="advantage" cols="40" rows="15"  size="20" placeholder="Advantage" required><?php echo $result['advantage'];?></textarea>
-					
-				</TD>
-			</TR>
-			<TR>
-				<TD>type	:</TD>
-				<TD>
-					<input type="text" name="type" maxlength"10"  size="20" placeholder="Type" value="<?php echo $result['type'];?>" required>
-				</TD>
-			</TR>
-			<TR>
-				<TD>img_banner	:</TD>
-				<TD>
-					<input type="text" name="img_banner" maxlength"10" size="20" placeholder="Image Banner" value="<?php echo $result['img_banner'];?>" required>
-				</TD>
-			</TR>
-			<TR>
-				<TD>img	:</TD>
-				<TD>
-					<input type="text" name="img" maxlength"10"  size="20" placeholder="Image" value="<?php echo $result['img'];?>" required>
-				</TD>
-			</TR>
-
-
-						<tr>
-							<td></td>
-							<td>
-								<input type="submit" name="submit" value="Save">
-								<input type="reset" name="submit" value="Cancle">
-							</td>
-						</tr>
-						</form>
-					</table>
-
-		</center>
-</BODY>
-</HTML>
+</body>
+</html>
