@@ -158,17 +158,18 @@ session_start();
 
 			echo '<div class="wrapper bg-white mt-sm-5">';
 		    	echo '<h4 class="pb-4 border-bottom" align="center">'.$row['title'].'</h4>';
-		        echo '<div class="py-3 border-bottom" align="center"> <img alt="img include" align="center" src="../htm/upload/img/'.$row['img'].'" width="400px"> ';
-		    	echo '</div>';
+		        echo '<div class="py-3 border-bottom" align="center"> <img alt="img include" align="center" src="../htm/upload/img/'.$row['img'].'" width="400px"> </div>';
 		    echo '<div class="py-2">';
 		        echo '<div class="row py-2">';
-		            echo '<div class="col-md-6"> <label for="description">คำอธิบาย</label> </div>';
-		            echo '<div id="decription">'.$row['description'].'</div>';
-		            echo '<div class="col-md-6"> <label for="expenses">ค่าใช้จ่าย</label> </div>';
-		            echo '<div id="expenses" >'.$row['expenses'].'</div>';
-		            echo '<div class="col-md-6"> <label for="advantage">ประโยชน์ที่ได้รับ</label> </div>';
-		            echo '<div id="advantage" >'.$row['advantage'].'</div>';
+		            echo '<div class="col-md-10"> <label for="description">คำอธิบาย</label>';
+		            echo '<div id="decription">'.$row['description'].'</div> </div>';
+		            echo '<div class="col-md-10"> <label for="expenses">ค่าใช้จ่าย</label>';
+		            echo '<div id="expenses" >'.$row['expenses'].'</div> </div>';
+		            echo '<div class="col-md-10"> <label for="advantage">ประโยชน์ที่ได้รับ</label>';
+		            echo '<div id="advantage" >'.$row['advantage'].'</div> </div>';
 		        echo '</div>';
+		    echo '</div>';
+		    echo '</div>';
 
 		        $_SESSION['acid'] = $row['id'];
 
@@ -218,8 +219,7 @@ $(document).ready(function(){
                 || $('#name').val().length == 0
                 || $('#email').val().length == 0 
                 || $('#phone').val().length == 0){
-            Swal.fire({
-
+            	Swal.fire({
                               icon: 'error',
                               title: 'Something went wrong!',
                               text: 'Please fill all the field !'
