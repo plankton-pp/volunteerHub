@@ -160,7 +160,7 @@ session_start();
 
 			echo '<div class="wrapper bg-white mt-sm-5">';
 		    	echo '<h4 class="pb-4 border-bottom" align="center">'.$row['title'].'</h4>';
-		        echo '<div class="py-3 border-bottom" align="center"> <img alt="img include" align="center" src="../img/'.$row['img'].'"> ';
+		        echo '<div class="py-3 border-bottom" align="center"> <img alt="img include" align="center" src="../htm/upload/img/'.$row['img'].'" width="400px"> ';
 		    	echo '</div>';
 		    echo '<div class="py-2">';
 		        echo '<div class="row py-2">';

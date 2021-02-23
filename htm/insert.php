@@ -15,6 +15,7 @@
 	$conn->query("SET NAMES UTF8");
 
 	$id = $_SESSION["id"];
+	$username = $_SESSION["username"];
 
 	$title = $_POST["title"];
 	$des = $_POST["description"];
@@ -61,8 +62,8 @@
 
 
 
-	$sql="insert into volunteer(title, description, attendants_target, attendants, due_date, detail, expenses, advantage, type, img_banner, img, doc, status)
- 		values('$title','$des','$target','$atten', '$due', '$detail', '$expen', '$advan', '$type', '$new_name', '$new_name2', '$new_name3','')";
+	$sql="insert into volunteer(title, description, attendants_target, attendants, due_date, detail, expenses, advantage, type, img_banner, img, doc, status, author)
+ 		values('$title','$des','$target','$atten', '$due', '$detail', '$expen', '$advan', '$type', '$new_name', '$new_name2', '$new_name3','processing','$username')";
 
  	if (mysqli_query($conn, $sql)) {
 		echo "success";
