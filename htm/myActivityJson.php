@@ -3,7 +3,13 @@ session_start();
 	header('Content-Type: application/json');
 	$userid = $_SESSION['id'];
 	$connect = mysqli_connect("localhost", "root", "", "volunteerhub");
-	$query = "SELECT activity.id, activity.activity_id, volunteer.title FROM activity INNER JOIN volunteer ON activity.activity_id = volunteer.id AND activity.user_id = ".$userid;
+	$_role = $_SESSION['role'];
+	if($_role=='admin'){
+		$query = "SELECT activity.id, activity.activity_id, volunteer.title FROM activity INNER JOIN volunteer ON activity.activity_id = volunteer.id";
+	}else{
+		$query = "SELECT activity.id, activity.activity_id, volunteer.title FROM activity INNER JOIN volunteer ON activity.activity_id = volunteer.id AND activity.user_id = ".$userid;
+	}
+	
 	$result = mysqli_query($connect, $query);
 
 	$activity_data = array();
