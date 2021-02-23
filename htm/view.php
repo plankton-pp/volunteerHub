@@ -216,7 +216,7 @@
 
        window.operateEvents = {
        		'click .edit': function (e, value, row, index) {
-            window.location = "editForm.php?id=" + row.id
+            window.location = "editFormResult.php?id=" + row.id
             /*$("#modalMemberEdit").modal('show');
             $("#id").val(row.id);
             $("#title").val(row.title);

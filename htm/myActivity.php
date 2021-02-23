@@ -42,21 +42,20 @@
   </style>
   <?php 
 
-  $conn=mysqli_connect("localhost", "root", "","volunteerhub");
-  $conn->query("SET NAMES UTF8"); 
+    $conn=mysqli_connect("localhost", "root", "","volunteerhub");
+    $conn->query("SET NAMES UTF8"); 
 
-  $sql_user = "SELECT * FROM register WHERE id = '".$_SESSION['id']."' ";
-  $query_user= mysqli_query($conn,$sql_user);
-  
-  $result_user = mysqli_fetch_array($query_user);
+    $sql_user = "SELECT * FROM register WHERE id = '".$_SESSION['id']."' ";
+    $query_user= mysqli_query($conn,$sql_user);
+    
+    $result_user = mysqli_fetch_array($query_user);
 
-  if(!$result_user){
-    echo "Not found ID=".$_SESSION['id'];
-  }else
-  {
-    //echo "error check id=".$result['ID'];
-  
-  }
+    if(!$result_user){
+      echo "Not found ID=".$_SESSION['id'];
+    }else{
+      //echo "error check id=".$result['ID'];
+    
+    }
   ?>
            <div class="container">
                  <!--User Information-->
@@ -110,7 +109,9 @@
 		  data-url="myActivityJson.php">
 	  <thead class="thead-dark">
 	    <tr>
-	      <th data-width="100" data-field="title">Title</th>
+	      <th data-width="100" data-field="id">ID</th>
+        <th data-width="100" data-field="activity_id">Activity ID</th>
+        <th data-width="100" data-field="title">Title</th>
         <th data-width="100" data-align="center" data-field="operate" data-search-formatter="false" data-formatter="operateFormatter" data-events="operateEvents">Action</th>
 	    </tr>
 	  </thead>
@@ -175,7 +176,6 @@
 
     	function operateFormatter(value, row, index) {
           return [ 
-                '<a class="edit" href="javascript:void(0)" title="Edit"><i style="font-size: 20px; color: #ffc107;" class="fas fa-edit"></i></a>' + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0',
                '<a class="remove" href="javascript:void(0)" title="Remove"><i style="font-size: 20px; color: #dc3545;" class="fas fa-trash"></i></a>'
 
             ].join('')
@@ -198,9 +198,11 @@
              }).then((result) => {
                 if (result.isConfirmed) {
                       $.ajax({
-                        url: "delete.php",
+                        url: "deletemyActivity.php",
                         type: 'GET',
-                        data: {id : row.id},
+                        data: { id : row.id,
+                                activity_id : row.activity_id
+                              },
                         cache: false,
                         success: function (data) {
                           Swal.fire({
@@ -209,7 +211,8 @@
                               text: 'ลบข้อมูลสำเร็จแล้ว',
                               timer: 5000
                           })
-                $table.bootstrapTable('refreshOptions', {url: 'viewjson.php'})
+                          console.log(data);
+                $table.bootstrapTable('refreshOptions', {url: 'myActivityJson.php'})
               },
               error: function (error) {
                 console.log("error is " + error);

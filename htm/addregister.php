@@ -45,7 +45,7 @@ $sql = "INSERT INTO register (username, password, name, email, address, telephon
 $rs = mysqli_query($con,$sql);
 
 if($rs){
-	echo "Register Successfully";
+
 }else{
 	echo $sql."<br>";
 	echo $rs."<br>";
@@ -53,14 +53,10 @@ if($rs){
 }
 
 mysqli_close($con);
+echo "<script>alert('Register Successfully!'); window.location.href = \"../htm/index.php\"; </script>";
 ?>
-<form action="login.php">
-<br/>
-<input type="submit" name="back" value=" Back to login ">
-			
-          </div>
+				</div>
 			</div>
-
 		</div>
 	</div>		
 </section>

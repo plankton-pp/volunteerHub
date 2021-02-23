@@ -234,6 +234,10 @@ function logout(){
 			            		document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
 			            		document.getElementById(\"view\").innerHTML = \"<p></p>\";
 			            		document.getElementById(\"tutorial\").innerHTML = \"<p></p>\";
+		            		}else if(sessionStorage.getItem('role')=='agency'){
+
+			            		document.getElementById(\"view\").innerHTML = \"<p></p>\";
+			            		
 		            		}
 		            	}
 		            	

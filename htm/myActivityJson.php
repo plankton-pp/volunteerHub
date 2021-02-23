@@ -3,18 +3,20 @@ session_start();
 	header('Content-Type: application/json');
 	$userid = $_SESSION['id'];
 	$connect = mysqli_connect("localhost", "root", "", "volunteerhub");
-	$query = "SELECT volunteer.title FROM activity INNER JOIN volunteer ON activity.activity_id = volunteer.id";
+	$query = "SELECT activity.id, activity.activity_id, volunteer.title FROM activity INNER JOIN volunteer ON activity.activity_id = volunteer.id";
 	$result = mysqli_query($connect, $query);
 
-	$volunteer_data = array();
+	$activity_data = array();
 
 	while ($row = mysqli_fetch_array($result)) {
-		$volunteer_data[] = array(
+		$activity_data[] = array(
+			'id' => $row["id"],
+			'activity_id'	=>	$row["activity_id"],
 			'title'	=>	$row["title"]
 		);
 	}
 
-	echo json_encode($volunteer_data, JSON_UNESCAPED_UNICODE);
+	echo json_encode($activity_data, JSON_UNESCAPED_UNICODE);
 
 	$connect -> close();
 

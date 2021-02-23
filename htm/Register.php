@@ -33,6 +33,7 @@
       font-family: 'Kanit', sans-serif;
     }
   </style>
+  
 
 </head>
 <body>
@@ -135,7 +136,7 @@
                     </div>
 
 					
-                    <button class="btn btn-primary btn-md w-50">REGISTER</button>
+                    <button class="btn btn-primary btn-md w-50" onclick="success()">REGISTER</button>
                     <!-- <a class="btn btn-primary btn-block" href="login.php">Register</a> -->
                 </form>
                 

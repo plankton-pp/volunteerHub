@@ -101,7 +101,8 @@
                           <label for="userid">จำนวนผู้เข้าร่วมที่คาดหวัง</label>
                       </td>
                       <td class="user_col">
-                        <input type="text" id="target" name="attendants_target" size="20" value="<?php echo $result['attendants_target'];?>" class='form-control' style="width: 200px;"/>
+                        
+                        <input type="number" min=0 id="target" name="attendants_target" size="20" value="<?php echo $result['attendants_target'];?>" class='form-control' style="width: 200px;"  />
                       </td>
                     </tr>
                     <tr>
@@ -110,7 +111,7 @@
                           <label for="userid">จำนวนผู้เข้าร่วมโครงการ</label>
                       </td>
                       <td class="user_col">
-                        <input type="text" id="attendants" name="attendants" size="20" value="<?php echo $result['attendants'];?>" class='form-control' style="width: 200px; "/>
+                        <input type="number" min=0 id="attendants" name="attendants" size="20" value="<?php echo $result['attendants'];?>" class='form-control' style="width: 200px; " />
                       </td>
                     </tr>
                     <tr>
@@ -194,7 +195,7 @@
            <div class="container">
                 <div align="center"> 
                      <button id="butsave"type="submit" data-toggle="modal" data-target="#myModal1" class="btn btn-info btn-lg"><i style='font-size:24px' class='far'>&#xf044;</i> SAVE</button> 
-                     <button type="cancel" class="btn btn-warning btn-lg"><i style='font-size:24px' class='fas'>&#xf2ed;</i> DISCARD</button>  
+                     <a href="editFormTest.php"><button type="button" class="btn btn-warning btn-lg"><i style='font-size:24px' class='fas'>&#xf2ed;</i> DISCARD</button></a> 
                 </div>  
                 <br /><br />  
                 
