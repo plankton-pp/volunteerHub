@@ -11,8 +11,8 @@ $response = 0;
 	
 	if($_POST['id'] != "" && $_POST["username"] != "" && $_POST["name"] != "" && $_POST["email"] != "" && $_POST["phone"] != "" && $_POST["address"] != "" ){
 
-		if($_POST["newphoto"] != 0)){
-			echo "newphoto ".$_POST['newphoto']."<br>";
+		if($_FILES["newphoto"]['name'] !=""){
+			echo "newphoto ".$_FILES["newphoto"]['name']."<br>";
 			$photo = $_FILES["newphoto"]["name"];
 			$filename = $photo;
 
@@ -24,7 +24,7 @@ $response = 0;
 			$image_ext = array("jpg","png","jpeg","gif","pdf");
 
 			if(in_array($file_extension,$image_ext)){
-
+				echo "Hello Mother Fucker";
 				$new_name = $_POST['username']. '.'.rand() . '.'. $filename; 
 				
 			  // Upload file
@@ -33,7 +33,7 @@ $response = 0;
 			  }
 			}
 		}else{
-			
+			echo "Hello Mother Fucker Bitch";
 			$new_name = $_SESSION['photo'];
 			echo "newname ".$new_name."<br>";
 
@@ -61,7 +61,7 @@ $response = 0;
 	//echo "<br>".$sql; //print out for debugging
 
 	if ($conn->query($sql)) {
-		echo "success";
+		echo "success Hello  ";
 		echo $response=$id;
 	}else{
 		
@@ -70,7 +70,7 @@ $response = 0;
 	$conn->close();
 
 	}else{
-		echo "fill information";
+		echo "from updateProfile fill information";
 	}
 	
 

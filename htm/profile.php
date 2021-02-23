@@ -155,13 +155,6 @@ include'navbar.php';
  <script>  
 $(document).ready(function(){
 	$('#save').click(function(){
-				if ($('#newphoto').val().length == 0) {
-				  // Do stuff when null/undefined/empty... 
-				  $('#newphoto').val() = "0";
-				} 
-				else { 
-				  // Do stuff when contains actual object... 
-				} 
 			if($('#username').val().length == 0 
 				|| $('#name').val().length == 0 
 				|| $('#email').val().length == 0 
@@ -195,7 +188,7 @@ $(document).ready(function(){
 									 
 
 					          })	
-					           //window.location = "profile.php"
+					           window.location = "profile.php";
 					         
 
 					        }
