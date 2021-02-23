@@ -153,7 +153,7 @@ session_start();
 			// connect to the database
 			$conn=mysqli_connect("localhost", "root", "","volunteerhub");
 			$conn->query("SET NAMES UTF8");
-			$sql="SELECT * FROM volunteer WHERE title LIKE '%$index%' and id = '$id_index'";
+			$sql="SELECT * FROM volunteer WHERE title LIKE '%$index%' AND id = '$id_index'";
 			$rs=$conn->query($sql);
 			$row = $rs->fetch_assoc();
 
