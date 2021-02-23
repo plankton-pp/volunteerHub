@@ -30,7 +30,7 @@ session_start();
 				echo		    "<div class=\"funding-goal\">";
 			    echo                "<p id=\"target\">เป้าหมาย</p>";
 			    echo                "<span class=\"value \">".$row['attendants_target']." คน";
-			    echo                	"<span class=\"hide-text\">ดำเนินโครงการแล้ว</span>";
+			    echo                	"<span class=\"hide-text\">ดำเนินโครงการ</span>";
 			    echo                    percentage($row['attendants_target'],$row['attendants'])."%";
 			    echo                "</span>";
 			    echo            "</div>";
