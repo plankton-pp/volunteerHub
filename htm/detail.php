@@ -178,9 +178,21 @@ session_start();
 
 	?>
 				
-	<div class="py-3 pb-4 border-bottom " align="center"> 
+	<div class="py-3 pb-4 border-bottom " align="center" id="buttonjoin">
 		<button class="btn btn-primary mr-3" id="join" data-toggle="modal" data-target="#myModal1" >Join</button>
 	</div>
+	<?php
+    echo "<script type=\"text/javascript\">
+                  if(sessionStorage.getItem('loggedin')==null){
+                    document.getElementById(\"buttonjoin\").innerHTML = \"<p></p>\";
+
+                  }else if(sessionStorage.getItem('loggedin')=='true'){
+                  }
+      
+
+                </script>
+            ";
+  ?> 
 
     <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
