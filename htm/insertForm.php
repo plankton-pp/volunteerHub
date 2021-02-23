@@ -16,6 +16,9 @@
           background-attachment: fixed;
           background-size: 100% 100%;
    }
+   #title{
+   	
+   }
 	</style>
 </head>
 <body>
@@ -28,7 +31,7 @@
 	<form method='post' action='' enctype="multipart/form-data" id="my-form">
 	<TR>
 		<TD>ชื่อกิจกรรม:</TD>
-		<TD><input type="text" name="title" id="title" maxlength"10"  size="20" placeholder="Title" class="form-control"></TD>
+		<TD><input type="text" maxlength="30" name="title" id="title"  size="20" placeholder="Title" class="form-control"></TD>
 	</TR>
 	<TR>
 		<TD>คำอธิบาย:</TD>

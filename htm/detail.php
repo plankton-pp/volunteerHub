@@ -147,12 +147,13 @@ session_start();
 <body bgcolor ="FFCC66">
 	<?php
 	$index = $_GET['index'];
+	$id_index = $_GET['id_index']; 
 	$_SESSION['index'] = $index;
 		
 			// connect to the database
 			$conn=mysqli_connect("localhost", "root", "","volunteerhub");
 			$conn->query("SET NAMES UTF8");
-			$sql="SELECT * FROM volunteer WHERE title LIKE '%$index%'";
+			$sql="SELECT * FROM volunteer WHERE title LIKE '%$index%' and id = '$id_index'";
 			$rs=$conn->query($sql);
 			$row = $rs->fetch_assoc();
 
@@ -162,11 +163,13 @@ session_start();
 		    echo '<div class="py-2">';
 		        echo '<div class="row py-2">';
 		            echo '<div class="col-md-10"> <label for="description">คำอธิบาย</label>';
-		            echo '<div id="decription">'.$row['description'].'</div> </div>';
+		            echo '<div id="decription">'.$row['description'].'</div> <br> </div>';
+		            echo '<div class="col-md-10"> <label for="detail">รายละเอียด</label>';
+		            echo '<div id="detail">'.$row['detail'].'</div> <br> </div>';
 		            echo '<div class="col-md-10"> <label for="expenses">ค่าใช้จ่าย</label>';
-		            echo '<div id="expenses" >'.$row['expenses'].'</div> </div>';
+		            echo '<div id="expenses" >'.$row['expenses'].'</div> <br> </div>';
 		            echo '<div class="col-md-10"> <label for="advantage">ประโยชน์ที่ได้รับ</label>';
-		            echo '<div id="advantage" >'.$row['advantage'].'</div> </div>';
+		            echo '<div id="advantage" >'.$row['advantage'].'</div> <br> </div>';
 		        echo '</div>';
 		    echo '</div>';
 		    echo '</div>';
