@@ -170,11 +170,11 @@ function logout(){
 <br><br>
 <div align="center">
   <h3>หมวดหมู่กิจกรรม</h3>
-  <button onclick="showList('')" class="btn-primary">Search</button>
-  <button onclick="showList('เด็กและเยาวชน')">เด็กและเยาวชน</button>
-  <button onclick="showList('สิ่งแวดล้อม')">สิ่งแวดล้อม</button>
-  <button onclick="showList('สัตว์')">สัตว์</button>
-  <button onclick="showList('ผู้สูงอายุ')">ผู้สูงอายุ</button>
+  <button class="btn btn-dark" onclick="showList('')">Search</button>
+  <button class="btn btn-outline-primary" onclick="showList('เด็กและเยาวชน')">เด็กและเยาวชน</button>
+  <button class="btn btn-outline-success" onclick="showList('สิ่งแวดล้อม')">สิ่งแวดล้อม</button>
+  <button class="btn btn-outline-warning" onclick="showList('สัตว์')">สัตว์</button>
+  <button class="btn btn-outline-info" onclick="showList('ผู้สูงอายุ')">ผู้สูงอายุ</button>
   
 <div align="center" style="margin-top: 30px; margin-bottom: 30px;">			
 	<table id="table-card">
