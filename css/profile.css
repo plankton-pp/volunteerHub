@@ -21,7 +21,7 @@ body {
     -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
     box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
     border: none;
-    margin-bottom: 0px
+    margin-bottom: 0px;
 }
 
 
@@ -41,8 +41,10 @@ body {
 }
     
 .m-b-25 {
-   margin-bottom: 200px;
-    margin-top: 150px;
+   margin-bottom: 80px;
+    margin-top: 80px;
+     margin-right: 120px;
+     margin-left: 120px;
 
 }
 
@@ -52,7 +54,7 @@ h6 {
 }
 
 .card .card-block p {
-    line-height: 50px
+    line-height: 63px
 }
 
 

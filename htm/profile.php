@@ -56,8 +56,9 @@ include'navbar.php';
 	                    <div class="row m-l-0 m-r-0">
 	                        <div class="col-sm-4 bg-c-lite-green user-profile">
 	                            <div class="card-block  m-b-25">
+	                            		<p class="m-b-10 f-w-600">Profile</p>
+	                                   	<img src="<?php echo "upload/pic/".$result['photo']; ?>" width="100" height="100">
 
-	                               
 	                            </div>
 	                        </div>
 	                        <div class="col-sm-8">
@@ -84,6 +85,10 @@ include'navbar.php';
 	                                        <p class="m-b-10 f-w-600">Adress</p>
 	                                        <h6><?php echo $result['address'];?></h6>
 	                                    </div>
+	                                    <div class="col-sm-6" align="left">
+	                                        <p class="m-b-10 f-w-600">Status</p>
+	                                        <h6><?php echo $result['status'];?></h6>
+	                                    </div>
 	                                </div>
 	                              
 							            <div align="right">  
@@ -107,7 +112,7 @@ include'navbar.php';
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                
                                 <h4 class="modal-title" id="myModalLabel">Edit Profile</h4>
                             </div>
 	                            <div class="modal-body">
@@ -129,6 +134,14 @@ include'navbar.php';
 		                            <label for="userid">Address</label>
 		                            <input type="text" name="address" id="address" size="20"  class='form-control' value="<?php echo $result['address'];?>"	><br>
 
+		                            <label for="userid">Status</label>
+		                            <input type="text" name="status" id="status" size="20"  class='form-control' value="<?php echo $result['status'];?>"	readonly><br>
+
+		                            <label for="userid">Photo</label>
+		                            <input type="text" name="photo" id="photo" size="20"  class='form-control' value="<?php echo $result['photo'];?>"	readonly><br>
+		                            <label for="userid">Change Photo</label>
+		                            <input type="file" name="newphoto" id="newphoto" size="20"  class='form-control' value=""><br>
+
 		                            <div align="right">
 		                            	<input type='button' aling = 'right' class='btn btn-info' value='Save' id='save'>
 		                            </div>
@@ -142,6 +155,13 @@ include'navbar.php';
  <script>  
 $(document).ready(function(){
 	$('#save').click(function(){
+				if ($('#newphoto').val().length == 0) {
+				  // Do stuff when null/undefined/empty... 
+				  $('#newphoto').val() = "0";
+				} 
+				else { 
+				  // Do stuff when contains actual object... 
+				} 
 			if($('#username').val().length == 0 
 				|| $('#name').val().length == 0 
 				|| $('#email').val().length == 0 
@@ -175,7 +195,7 @@ $(document).ready(function(){
 									 
 
 					          })	
-					           window.location = "profile.php"
+					           //window.location = "profile.php"
 					         
 
 					        }
