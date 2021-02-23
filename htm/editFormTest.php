@@ -45,19 +45,6 @@
   $conn=mysqli_connect("localhost", "root", "","volunteerhub");
   $conn->query("SET NAMES UTF8"); 
 
-  $sql = "SELECT * FROM volunteer WHERE id = '".$_SESSION['id']."' ";
-  $query= mysqli_query($conn,$sql);
-  
-  $result = mysqli_fetch_array($query);
-
-  if(!$result){
-    echo "Not found ID=".$_SESSION['id'];
-  }else
-  {
-    //echo "error check id=".$result['ID'];
-  
-  }
-
   $sql_user = "SELECT * FROM register WHERE id = '".$_SESSION['id']."' ";
   $query_user= mysqli_query($conn,$sql_user);
   
@@ -90,7 +77,7 @@
                           <label for="userid">ชื่อ</label>
                       </td>
                       <td class="user_col">
-                        <input type="text" name="userid" size="20" value="<?php echo $result_user['username'];?>" class='form-control' style="width: 200px;"readonly/>
+                        <input type="text" name="username" size="20" value="<?php echo $result_user['username'];?>" class='form-control' style="width: 200px;"readonly/>
                       </td>
                     </tr>
                     <tr>
@@ -99,7 +86,7 @@
                           <label for="userid">อีเมล</label>
                       </td>
                       <td class="user_col">
-                        <input type="text" name="userid" size="20" value="<?php echo $result_user['email'];?>" class='form-control' style="width: 200px;"readonly/>
+                        <input type="text" name="email" size="20" value="<?php echo $result_user['email'];?>" class='form-control' style="width: 200px;"readonly/>
                       </td>
                     </tr>
                     <tr>
@@ -108,7 +95,7 @@
                           <label for="userid">ที่อยู่</label>
                       </td>
                       <td class="user_col">
-                        <input type="text" name="userid" size="20" value="<?php echo $result_user['address'];?>" class='form-control' style="width: 200px; height: 100px;"readonly/>
+                        <input type="text" name="address" size="20" value="<?php echo $result_user['address'];?>" class='form-control' style="width: 200px; height: 100px;"readonly/>
                       </td>
                     </tr>
                   </table>
@@ -233,89 +220,6 @@
             })
         	}  
     	}
-      $(document).ready(function () {
-            $("#btn-save").click(function () {
-              if($("#title").val()=="" || $("#description").val()=="" || $("#attendants_target").val()=="" || $("#attendants").val()=="" || $("#due_date").val()=="" || $("#detail").val()==""  || $("#expenses").val()=="" || $("#advantage").val()=="" || $("#type").val()=="" || $("#img_banner").val()=="" || $("#img").val()==""){
-
-                Swal.fire({
-                    icon: 'error',
-                    text: 'กรุณากรอกข้อมูลให้ครบถ้วน',
-                    timer: 5000
-                })
-            }else {
-                var id          = $("#id").val();
-                var title       = $("#title").val();
-                var description = $("#description").val();
-                var attendants_target = $("#attendants_target").val();
-                var attendants  = $("#attendants").val();
-                var due_date    = $("#due_date").val();
-                var detail      = $("#detail").val();
-                var expenses    = $("#expenses").val();
-                var advantage   = $("#advantage").val();
-                var type        = $("#type").val();
-                var img_banner  = $("#img_banner").val();
-                var img         = $("#img").val();
-
-                Swal.fire({
-                   title: 'Are you sure ?',
-                   text: 'คุณต้องการแก้ไขข้อมูลกิจกรรม ใช่หรือไม่ ?',
-                   icon: 'warning',
-                   showCancelButton: true,
-                   confirmButtonColor: '#3085d6',
-                   cancelButtonColor: '#d33',
-                   confirmButtonText: 'Comfirm',
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                        $.ajax({
-                              url: "edit.php",
-                              type: 'POST',
-                              data: {
-                                id : id,
-                                title : title,
-                                description : description,
-                                attendants_target : attendants_target,
-                                attendants : attendants,
-                                due_date : due_date,
-                                detail : detail,
-                                expenses : expenses,
-                                advantage : advantage,
-                                type : type,
-                                img_banner : img_banner,
-                                img : img
-                },
-                cache: false,
-                success: function (data) {
-                  $("#modalMemberEdit").modal('hide');
-                              $("#id").val("");
-                              $("#description").val("");
-                              $("#attendants_target").val("");
-                              $("#attendants").val("");
-                              $("#due_date").val("");
-                              $("#detail").val("");
-                              $("#expenses").val("");
-                              $("#advantage").val("");
-                              $("#type").val("");
-                              $("#img_banner").val("");
-                              $("#img").val("");
-                              $("#btn-save").attr("disabled", false);
-
-                  Swal.fire({
-                    icon: 'success',
-                    title: 'Success !',
-                    text: 'แก้ไขข้อมูลสำเร็จแล้ว',
-                    timer: 5000
-                  })
-                  $table.bootstrapTable('refreshOptions', {url: 'viewjson.php'})
-                },
-                error: function (error) {
-                  console.log("error is " + error);
-                }
-              });
-                    }
-              })
-            }
-          })
-      })
     </script>
   </body>
 </html>
