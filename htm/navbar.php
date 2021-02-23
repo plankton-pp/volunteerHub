@@ -28,7 +28,7 @@
         </ul>
         <div class="d-flex">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <div class="nav-link" ><li class="nav-item" ><a href="profile.php"><button id="profile">Profile</button></a></li></div>
+            <div class="nav-link" id="profilediv" ><li class="nav-item" ><a href="profile.php"><button id="profile">Profile</button></a></li></div>
             <div class="nav-link" ><li class="nav-item" id="logoutbutton"><a href="logout.php" style="color: white;" class="btn btn-danger">Logout</a></li></div>
 
           </ul>
@@ -46,6 +46,8 @@
                     document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
                     document.getElementById(\"view\").innerHTML = \"<p></p>\";
                     document.getElementById(\"empty\").innerHTML = \"<p width=\"200px\"></p>\";
+                    document.getElementById(\"profilediv\").innerHTML = \"<p></p>\";
+
                   }else if(sessionStorage.getItem('loggedin')=='true'){
                     document.getElementById(\"empty\").innerHTML = \"<p></p>\";
                   }

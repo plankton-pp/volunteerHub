@@ -44,6 +44,7 @@
                     document.getElementById(\"insertForm\").innerHTML = \"<p></p>\";
                     document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
                     document.getElementById(\"view\").innerHTML = \"<p></p>\";
+                            document.getElementById(\"profilediv\").innerHTML = \"<p></p>\";
                     document.getElementById(\"logoutbutton\").innerHTML = \"<a href='login.php' class='btn btn-primary'>Login</a>\";
                     
                   }else if(sessionStorage.getItem('loggedin')=='true'){
