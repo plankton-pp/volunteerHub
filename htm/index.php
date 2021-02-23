@@ -170,7 +170,6 @@ function logout(){
 <br><br>
 <div align="center">
   <h3>หมวดหมู่กิจกรรม</h3>
-  <button class="btn btn-dark" onclick="showList('')">Search</button>
   <button class="btn btn-outline-primary" onclick="showList('เด็กและเยาวชน')">เด็กและเยาวชน</button>
   <button class="btn btn-outline-success" onclick="showList('สิ่งแวดล้อม')">สิ่งแวดล้อม</button>
   <button class="btn btn-outline-warning" onclick="showList('สัตว์')">สัตว์</button>
