@@ -28,54 +28,54 @@
 	<form method='post' action='' enctype="multipart/form-data" id="my-form">
 	<TR>
 		<TD>ชื่อกิจกรรม:</TD>
-		<TD><input type="text" name="title" id="title" maxlength"10"  size="20" placeholder="Title"></TD>
+		<TD><input type="text" name="title" id="title" maxlength"10"  size="20" placeholder="Title" class="form-control"></TD>
 	</TR>
 	<TR>
 		<TD>คำอธิบาย:</TD>
 		<TD>
-			<textarea name="description" id="description"cols="40" rows="4"  size="20" placeholder="Description"></textarea>
+			<textarea name="description" id="description"cols="40" rows="4"  size="20" placeholder="Description" class="form-control"></textarea>
 		</TD>
 	</TR>
 	<TR>
 		<TD>จำนวนคนเป้าหมาย:</TD>
 		<TD>
-			<input type="number" name="target" id="target" maxlength"10" size="20" placeholder="Target" min=0>
+			<input type="number" name="target" id="target" maxlength"10" size="20" placeholder="Target" min=0 class="form-control">
 		</TD>
 	</TR>
 	<TR>
 		<TD>จำนวนคนที่เข้าร่วม:</TD>
 		<TD>
-			<input type="number" name="attendant" id="attendant" maxlength"10" size="20" placeholder="Attendant" min=0>
+			<input type="number" name="attendant" id="attendant" maxlength"10" size="20" placeholder="Attendant" min=0 class="form-control">
 		</TD>
 	</TR>
 	<TR>
 		<TD>วันที่จัดกิจกรรม:</TD>
 		<TD>
-			<input type="datetime-local" name="due_date" id="due_date" placeholder="Due date">
+			<input type="datetime-local" name="due_date" id="due_date" placeholder="Due date" class="form-control">
 		</TD>
 	</TR>
 	<TR>
 		<TD>รายละเอียด:</TD>
 		<TD>
-			<textarea name="detail" id="detail"cols="40" rows="4"  size="20" placeholder="detail"></textarea>
+			<textarea name="detail" id="detail"cols="40" rows="4"  size="20" placeholder="detail" class="form-control"></textarea>
 		</TD>
 	</TR>
 	<TR>
 		<TD>ค่าใช้จ่าย:</TD>
 		<TD>
-			<textarea name="expenses" id="expenses"cols="40" rows="4"  size="20" placeholder="detail" ></textarea>
+			<textarea name="expenses" id="expenses"cols="40" rows="4"  size="20" placeholder="detail" class="form-control"></textarea>
 		</TD>
 	</TR>
 	<TR>
 		<TD>ประโยชน์ที่ได้รับ:</TD>
 		<TD>
-			<textarea name="advantage" id="advantage"cols="40" rows="4"  size="20" placeholder="advantage"></textarea>
+			<textarea name="advantage" id="advantage"cols="40" rows="4"  size="20" placeholder="advantage" class="form-control"></textarea>
 		</TD>
 	</TR>
 	<TR>
 		<TD>ประเภทของกิจกรรม:</TD>
 		<TD>
-			<select name="type" id="type" placeholder="Type" >
+			<select name="type" id="type" placeholder="Type" class="form-control">
 			 	<option value="สิ่งแวดล้อม">สิ่งแวดล้อม</option>
 			  	<option value="เด็กและเยาวชน">เด็กและเยาวชน</option>
 			  	<option value="สัตว์">สัตว์</option>
@@ -88,21 +88,21 @@
 		<TD>ภาพปก:</TD>
 		<TD>
 			<!--<input type="text" name="img_banner" id="img_banner" maxlength"10" size="20" placeholder="Image Banner">-->
-			<input type = "file" accept="image/*" name = "img_banner" id="img_banner" required>
+			<input type = "file" accept="image/*" name = "img_banner" id="img_banner" required class="form-data">
 		</TD>
 	</TR>
 	<TR>
 		<TD>ภาพอื่นๆ:</TD>
 		<TD>
 			<!--<input type="text" name="img" id="img" maxlength"10"  size="20" placeholder="Image">-->
-			<input type = "file" accept="image/*" name = "img" id="img" required>
+			<input type = "file" accept="image/*" name = "img" id="img" required class="form-data">
 		</TD>
 	</TR>
 	<TR>
 		<TD>อัพโหลดเอกสารขออนุญาติจัดกิจกรรม:</TD>
 		<TD>
 			<!--<input type="text" name="img" id="img" maxlength"10"  size="20" placeholder="Image">-->
-			<input type = "file" accept="application/pdf" name = "doc" id="doc" required>
+			<input type = "file" accept="application/pdf" name = "doc" id="doc" required class="form-data">
 		</TD>
 	</TR>
 	<TR>
@@ -142,7 +142,8 @@
 						  'saved',
 						  'Your event has been saved!',
 						  'success'
-						)	
+						)
+						location.assign("index.php");
 					}				
 				});	
 				}else{

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
+<?php
+	// connect to the database
+session_start();
+?>
 <html>
 <head>
-	<!-- CSS only -->
-   
-
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <?php include'navbar.php';?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
     <script type="text/javascript">
     	window.onload = function(){
@@ -136,11 +139,6 @@
 			}
     </style>
 
-
-<?php
-	// connect to the database
-session_start();
-?>
 	<link rel="shortcut icon" href="../img/volunteer.ico" />
 	<title>VolunteerHub</title>
 	<!--<link rel="stylesheet" type="text/css" href="../css/style-detail.css">-->

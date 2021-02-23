@@ -70,7 +70,7 @@ include'navbar.php';
 	                                        <h6><?php echo $result['username'];?></h6>
 	                                    </div>
 	                                    <div class="col-sm-6" align="left">
-	                                        <p class="m-b-10 f-w-600">name</p>
+	                                        <p class="m-b-10 f-w-600">Name</p>
 	                                        <h6><?php echo $result['name'];?></h6>
 	                                    </div>
 	                                    <div class="col-sm-6" align="left">

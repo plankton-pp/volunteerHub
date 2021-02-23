@@ -113,7 +113,7 @@
                             <div class="col-md-12">
                                 <div class="form-label-group">
                                     <label><font size ="5px">PHOTO</font></label>
-                                    <input type = "file" accept="image/*" name = "photo" id="photo" required>
+                                    <input type = "file" class="form-data" accept="image/*" name = "photo" id="photo" required>
                                         
                                 </div>
                             </div>
@@ -123,8 +123,8 @@
                         <div class="form-row">
                             <div class="col-md-12">
                                 <div class="form-label-group">
-                                    <label><font size ="5px">TYPE</font></label><br>
-                                    <select name="status" id="status" form="registerForm"  >
+                                    <label><font size ="5px">ROLE TYPE</font></label><br>
+                                    <select name="status" id="status" form="registerForm" class="form-control" >
                                       <option value="user">User</option>
                                       <option value="agency">Agency</option>
                                     </select>

@@ -5,7 +5,7 @@
 	$conn=mysqli_connect("localhost", "root", "","volunteerhub");
 	$conn->query("SET NAMES UTF8");
 	// get results from database
-	$sql="SELECT * FROM volunteer WHERE title LIKE '%$search%'";
+	$sql="SELECT * FROM volunteer WHERE title LIKE '%$search%' AND status LIKE 'pass'";
 	$rs=$conn->query($sql);
 	$suggestion = array();
 	$index = 0;

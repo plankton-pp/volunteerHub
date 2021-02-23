@@ -65,8 +65,9 @@ session_start();
 	      </ul>
 	      <div class="d-flex">
 	      	<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	      		<li class="nav-item" ><div class="nav-link" ><a href="profile.php"><button id="profile">Profile</button></a></li></div>
-	      		<div class="nav-link" ><li class="nav-item" id="logoutbutton"><a href="logout.php" style="color: white;" class="btn btn-danger">Logout</a></div></li>
+	      		<li class="nav-item" ><div class="nav-link" ><a href="profile.php" style="margin-right: -30px;"><button id="profile">Profile</button></a></li></div>
+	      		<div class="nav-link" ><li class="nav-item" id="logoutbutton"><a href="logout.php" style="color: white;" class="btn btn-danger">Logout</a></div>
+	      		</li>
 
 
 	      	</ul>
@@ -123,7 +124,15 @@ body { font-family: 'Kanit', sans-serif; }
 #profile:hover {
 	  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
 	}
+html {
+	  scroll-behavior: smooth;
+		}
 </style>
+<script type="text/javascript">
+    	window.onload = function(){
+			window.scrollTo(30, 500);
+		}
+    </script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">
 	function say(str){
@@ -162,6 +171,8 @@ function logout(){
   <button onclick="showList('')" class="btn-primary">Search</button>
   <button onclick="showList('เด็กและเยาวชน')">เด็กและเยาวชน</button>
   <button onclick="showList('สิ่งแวดล้อม')">สิ่งแวดล้อม</button>
+  <button onclick="showList('สัตว์')">สัตว์</button>
+  <button onclick="showList('ผู้สูงอายุ')">ผู้สูงอายุ</button>
   
 <div align="center" style="margin-top: 30px; margin-bottom: 30px;">			
 	<table id="table-card">
@@ -184,7 +195,7 @@ function logout(){
 				}
 				echo	"<td style=\"padding-left: 25px;\">";
 				echo		"<div class=\"card\">";
-				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../htm/upload/img_banner/'.$row['img_banner'].'" style="width:100%"/></a>';
+				echo		  '<a href="detail.php?index='.$row['title'].'"><img alt="Avatar" src="../htm/upload/img_banner/'.$row['img_banner'].'" style="width:100%; height:150px;"/></a>';
 				echo		  "<div class=\"card-body\">";
 				echo		   '<a href="detail.php?index='.$row['title'].'" id="card-title"><b>'.$row['title'].'</b></a>';
 				echo		    "<p class=\"card-text\">";
