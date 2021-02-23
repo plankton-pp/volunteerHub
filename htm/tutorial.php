@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<?php session_start();?>
 <html lang="th">
 <head>
-	<?php include'navbar.php';?>
+<?php include'navbar.php';?>   
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Tutorial</title>
@@ -38,23 +39,7 @@
 	</style>
 </head>	
 <body>
-	<?php
-    echo "<script type=\"text/javascript\">
-                  if(sessionStorage.getItem('loggedin')==null){
-                    document.getElementById(\"insertForm\").innerHTML = \"<p></p>\";
-                    document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
-                    document.getElementById(\"view\").innerHTML = \"<p></p>\";
-                            document.getElementById(\"profilediv\").innerHTML = \"<p></p>\";
-                    document.getElementById(\"logoutbutton\").innerHTML = \"<a href='login.php' class='btn btn-primary'>Login</a>\";
-                    
-                  }else if(sessionStorage.getItem('loggedin')=='true'){
-                   
-                  }
-      
-
-                </script>
-            ";
-  ?>
+	 
 <br>
 <h1>ขั้นตอนการส่งโครงการ</h1>
 

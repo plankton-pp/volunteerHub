@@ -28,8 +28,11 @@ session_start();
                               $_SESSION['email'] = $row['email'];
                               $_SESSION['phone'] = $row['telephone'];
                               $_SESSION['photo'] = $row['photo'];
+                              $_SESSION['role']= $row['status'];
                               echo "<script type=\"text/javascript\">
-                                     sessionStorage.setItem('loggedin','true');
+                                    sessionStorage.setItem('loggedin','true');
+                                     sessionStorage.setItem('role','".$row['status']."');
+
                                   </script>";
                               if($_SESSION["status"]=="admin"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
                                 echo "<script>window.location.href = \"../htm/index.php\";</script>";

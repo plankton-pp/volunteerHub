@@ -8,23 +8,25 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-right: 700px;">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-right: 600px;">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          </li>
+          <li class="nav-item" id="myActivity">
+            <a class="nav-link"  href="myActivity.php" >My Activity</a>
           </li>
           <li class="nav-item" id="insertForm">
             <a class="nav-link" href="insertForm.php">InsertForm</a>
           </li>
           <li class="nav-item" id="view">
-            <a class="nav-link" href="view.php">view</a>
+            <a class="nav-link" href="view.php">View</a>
           </li>
           <li class="nav-item" id="editFormTest">
             <a class="nav-link" href="editFormTest.php">EditForm</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="tutorial">
             <a class="nav-link"  href="tutorial.php" >Tutorial</a>
           </li>
-          <li class="nav-item" id="empty"><p style="width: 0px;"></p></li>
         </ul>
         <div class="d-flex">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -45,11 +47,16 @@
                     document.getElementById(\"insertForm\").innerHTML = \"<p></p>\";
                     document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
                     document.getElementById(\"view\").innerHTML = \"<p></p>\";
-                    document.getElementById(\"empty\").innerHTML = \"<p width=\"200px\"></p>\";
                     document.getElementById(\"profilediv\").innerHTML = \"<p></p>\";
+                    document.getElementById(\"myActivity\").innerHTML = \"<p></p>\";
 
                   }else if(sessionStorage.getItem('loggedin')=='true'){
-                    document.getElementById(\"empty\").innerHTML = \"<p></p>\";
+                    if(sessionStorage.getItem('role')=='user'){
+                      document.getElementById(\"insertForm\").innerHTML = \"<p></p>\";
+                      document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
+                      document.getElementById(\"view\").innerHTML = \"<p></p>\";
+                      document.getElementById(\"tutorial\").innerHTML = \"<p></p>\";
+                    } 
                   }
       
 
