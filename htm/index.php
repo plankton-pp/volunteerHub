@@ -65,7 +65,7 @@ session_start();
 	      </ul>
 	      <div class="d-flex">
 	      	<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	      		<li class="nav-item" ><div class="nav-link" ><a href="profile.php" style="margin-right: -30px;"><button id="profile">Profile</button></a></li></div>
+	      		<li class="nav-item" ><div class="nav-link" id="profilediv"><a href="profile.php" style="margin-right: -30px;"><button id="profile">Profile</button></a></li></div>
 	      		<div class="nav-link" ><li class="nav-item" id="logoutbutton"><a href="logout.php" style="color: white;" class="btn btn-danger">Logout</a></div>
 	      		</li>
 
@@ -222,6 +222,7 @@ function logout(){
 		            		document.getElementById(\"insertForm\").innerHTML = \"<p></p>\";
 		            		document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
 		            		document.getElementById(\"view\").innerHTML = \"<p></p>\";
+		            		document.getElementById(\"profilediv\").innerHTML = \"<p></p>\";
 		            	}else if(sessionStorage.getItem('loggedin')=='true'){
 		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<a href='detail.php?index=".$row['title']."' class='btn btn-primary'id='btn-join'>Join</a>\";
 		            	}
