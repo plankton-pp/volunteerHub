@@ -14,8 +14,7 @@ session_start();
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 	<link rel="shortcut icon" href="../img/volunteer.ico" />
-
-	<title>VolunteerHub</title>
+	<title>VolunteerHub - Home</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->

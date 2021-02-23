@@ -26,8 +26,8 @@
 
     </style>
 
-
-    <title>Admin</title>
+  <link rel="shortcut icon" href="../img/volunteer.ico" />
+  <title>VolunteerHub-View</title>
     
   </head>
   <body>

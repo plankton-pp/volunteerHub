@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <link rel="shortcut icon" href="../img/volunteer.ico" />
-  <title>VolunteerHub</title>
+  <title>VolunteerHub - Login</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

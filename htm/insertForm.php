@@ -2,8 +2,8 @@
 <head>
 	<?php include'navbar.php';?>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link rel="shortcut icon" href="../img/volunteer.ico" />
-	<title>VolunteerHub</title>
+	<link rel="shortcut icon" href="../volunteerHub/img/volunteer.ico" />
+	<title>VolunteerHub - Insertion Form</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="../css/style-insertform.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

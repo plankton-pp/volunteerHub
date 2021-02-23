@@ -2,7 +2,8 @@
 <?php session_start();?>
  <html>  
       <head>  
-           <title>Webslesson Tutorial | Upload Multiple Image by Using PHP Ajax Jquery with Bootstrap Modal</title>
+          <link rel="shortcut icon" href="../img/volunteer.ico" />
+  <title>VolunteerHub - Editing Form</title>
            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
            <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>  
