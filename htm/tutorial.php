@@ -75,7 +75,7 @@
             </div>
            
         </a>
-        <a href="InsertForm.htm" class="list-group-item list-group-item-action" target="_blank">
+        <a href="insertForm.php" class="list-group-item list-group-item-action" target="_blank">
             <div class="d-flex w-100 justify-content-between">
                 <h4>ส่งข้อมูลมาให้เรา <h5>Click Here</h5></h4>
                 
