@@ -48,7 +48,6 @@
 	      <th data-width="100" data-field="attendants_target">จำนวนคนที่ต้องการ</th>
 	      <th data-width="100" data-field="attendants">จำนวนคนที่เข้าร่วม</th>
 	      <th data-width="100" data-field="due_date">วันที่จัดกิจกรรม</th>
-        <th data-width="100" data-field="due_date">วันที่จัดกิจกรรม</th>
 	      <th data-width="100" data-field="expenses">ค่าใช้จ่าย</th>
 	      <th data-width="100" data-field="advantage">ประโยชน์ที่ได้รับ</th>
 	      <th data-width="100" data-field="type">ประเภทกิจกรรม</th>
