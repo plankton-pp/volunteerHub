@@ -226,7 +226,7 @@ function logout(){
 		            		document.getElementById(\"profilediv\").innerHTML = \"<p></p>\";
 		            		document.getElementById(\"myActivity\").innerHTML = \"<p></p>\";
 		            	}else if(sessionStorage.getItem('loggedin')=='true'){
-		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<a href='detail.php?index=".$row['title']."' class='btn btn-primary'id='btn-join'>Join</a>\";
+		            		document.getElementById(\"buttonset".$row['id']."\").innerHTML = \"<a href='detail.php?index=".$row['title'].'&id_index='.$row['id']."' class='btn btn-primary'id='btn-join'>Join</a>\";
 		            		if(sessionStorage.getItem('role')=='user'){
 			            		document.getElementById(\"insertForm\").innerHTML = \"<p></p>\";
 			            		document.getElementById(\"editFormTest\").innerHTML = \"<p></p>\";
